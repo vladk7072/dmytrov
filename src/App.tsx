@@ -1,10 +1,11 @@
 import React from "react";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
-// import { IndexSlide } from "./components/IndexSlider";
-import { Questions } from "./components/index/Questions";
-import { Rates } from "./components/index/Rates";
-import { Index } from "./pages/Index";
+import { BlogPage } from "./pages/BlogPage";
+import { BlogNewPage } from "./pages/BlogNewPage";
+import { IndexPage } from "./pages/IndexPage";
+import { ServicesPage } from "./pages/ServicesPage";
 import "./styles/app.scss";
 
 function App() {
@@ -12,10 +13,13 @@ function App() {
     <>
       <Header />
       <div className="main">
-        {/* <Index /> */}
-        {/* <IndexSlide /> */}
-        <Rates />
-        {/* <Questions /> */}
+        <Routes>
+          <Route path="/" element={<Navigate to="home" />} />
+          <Route path="/home" element={<IndexPage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/*" element={<BlogNewPage />} />
+          <Route path="/services/*" element={<ServicesPage />} />
+        </Routes>
       </div>
       <Footer />
     </>

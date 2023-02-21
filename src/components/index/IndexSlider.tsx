@@ -1,6 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import bg1 from "../assets/images/indexslider-img/bg.jpg";
+import bg1 from "../../assets/images/indexslider-img/bg.jpg";
 
 export const IndexSlide = () => {
   return (
@@ -11,6 +11,18 @@ export const IndexSlide = () => {
             <div className="swiper-slide indexslide__slide">
               <div className="indexslide__slide-area">
                 <img src={bg1} alt="" />
+                <div className="indexslide__slide-area-box">
+                  <div className="indexslide__slide-area-item indexslide__slide-area-item-1">01</div>
+                </div>
+                <div className="indexslide__slide-area-box">
+                  <div className="indexslide__slide-area-item indexslide__slide-area-item-2">02</div>
+                </div>
+                <div className="indexslide__slide-area-box">
+                  <div className="indexslide__slide-area-item indexslide__slide-area-item-3">03</div>
+                </div>
+                <div className="indexslide__slide-area-box">
+                  <div className="indexslide__slide-area-item indexslide__slide-area-item-4">04</div>
+                </div>
               </div>
               <div className="indexslide__slide-box">
                 <div className="indexslide__slide-title">Наші переваги</div>

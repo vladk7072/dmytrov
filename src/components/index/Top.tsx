@@ -1,7 +1,7 @@
 import React from "react";
-import descLink from "../assets/images/top-image/desc-link.jpg";
-import bg from "../assets/images/top-image/bg.jpg";
-import bgContainer from "../assets/images/top-image/bg-container.jpg";
+import descLink from "../../assets/images/top-image/desc-link.jpg";
+import bg from "../../assets/images/top-image/bg.jpg";
+import bgContainer from "../../assets/images/top-image/bg-container.jpg";
 
 export const Top = () => {
   return (

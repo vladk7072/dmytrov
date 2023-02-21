@@ -6,8 +6,32 @@ import instagram from "../assets/images/header-img/instagram.svg";
 import facebook from "../assets/images/header-img/facebook.svg";
 import calc from "../assets/images/header-img/calc.svg";
 import user from "../assets/images/header-img/user.svg";
+import { NavLink } from "react-router-dom";
 
 export const Header = () => {
+  const dataMenu = [
+    {
+      item: "Головна",
+      link: "home",
+    },
+    {
+      item: "Питання та відповіді",
+      link: "questions",
+    },
+    {
+      item: "Послуги",
+      link: "services",
+    },
+    {
+      item: "Блог",
+      link: "blog",
+    },
+    {
+      item: "Контакти",
+      link: "contacts",
+    },
+  ];
+
   return (
     <header className="header">
       <div className="container">
@@ -36,34 +60,21 @@ export const Header = () => {
               </div>
             </div>
             <ul className="header__nav-list">
+              {dataMenu.map((item, idx) => (
+                <li className="header__nav-item" key={idx}>
+                  <NavLink
+                    className={({ isActive }) =>
+                      isActive ? "header__nav-link header__nav-link--active" : "header__nav-link"
+                    }
+                    to={item.link}
+                  >
+                    {item.item}
+                  </NavLink>
+                </li>
+              ))}
               <li className="header__nav-item">
                 <a className="header__nav-link" href="#">
-                  Головна
-                </a>
-              </li>
-              <li className="header__nav-item">
-                <a className="header__nav-link" href="#">
-                  Питання та відповіді
-                </a>
-              </li>
-              <li className="header__nav-item">
-                <a className="header__nav-link" href="#">
-                  Послуги
-                </a>
-              </li>
-              <li className="header__nav-item">
-                <a className="header__nav-link" href="#">
-                  Блог
-                </a>
-              </li>
-              <li className="header__nav-item">
-                <a className="header__nav-link" href="#">
-                  Контакти
-                </a>
-              </li>
-              <li className="header__nav-item">
-                <a className="header__nav-link" href="#">
-                <img src={calc} alt="" />
+                  <img src={calc} alt="" />
                   Прорахувати вартість
                 </a>
               </li>
