@@ -8,6 +8,8 @@ import { IndexPage } from "./pages/IndexPage";
 import { ServicesPage } from "./pages/ServicesPage";
 import "./styles/app.scss";
 import { CreatePage } from "./pages/CreatePage";
+import { Register } from "./pages/Register";
+import { MyAccountPage } from "./pages/MyAccountPage";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
           <Route path="/blog/*" element={<BlogNewPage />} />
           <Route path="/services/*" element={<ServicesPage />} />
           <Route path="/create" element={<CreatePage />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/account" element={<MyAccountPage />} />
         </Routes>
       </div>
       <Footer />
