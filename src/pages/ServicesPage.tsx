@@ -1,9 +1,10 @@
-import React, { useRef } from "react";
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import bg1 from "../assets/images/services-img/top-bg.jpg";
 import bgSlide from "../assets/images/services-img/slide-1.jpg";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import "swiper/css";
+import { ScrollToTopOnMount } from "../helpers/routerup";
 
 export const ServicesPage = () => {
   const dataNav = [
@@ -21,10 +22,11 @@ export const ServicesPage = () => {
     },
   ];
 
-  const swiper = useSwiper();
+  var swiper = useSwiper();
 
   return (
     <>
+      <ScrollToTopOnMount />
       <section className="servicespage">
         <div className="container">
           <div className="servicespage__wrapper">

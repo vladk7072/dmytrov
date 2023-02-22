@@ -7,6 +7,7 @@ import { BlogNewPage } from "./pages/BlogNewPage";
 import { IndexPage } from "./pages/IndexPage";
 import { ServicesPage } from "./pages/ServicesPage";
 import "./styles/app.scss";
+import { CreatePage } from "./pages/CreatePage";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/*" element={<BlogNewPage />} />
           <Route path="/services/*" element={<ServicesPage />} />
+          <Route path="/create" element={<CreatePage />} />
         </Routes>
       </div>
       <Footer />
