@@ -10,6 +10,7 @@ import "./styles/app.scss";
 import { CreatePage } from "./pages/CreatePage";
 import { Register } from "./pages/Register";
 import { MyAccountPage } from "./pages/MyAccountPage";
+import { WorksheetPage } from "./pages/WorksheetPage";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/create" element={<CreatePage />} />
           <Route path="/register" element={<Register />} />
           <Route path="/account" element={<MyAccountPage />} />
+          <Route path="/worksheet" element={<WorksheetPage />} />
         </Routes>
       </div>
       <Footer />

@@ -397,7 +397,7 @@ export const CreatePage = () => {
               <span>Етап</span>
               <div className="create__item-count-num">
                 <div className="create__item-count-num create__item-count-num-target">
-                  {slide}
+                  0{slide}
                 </div>
                 <div className="create__item-count-num create__item-count-num-all">
                   /05
@@ -416,10 +416,20 @@ export const CreatePage = () => {
                     </div>
                     <div className="create__item-content-box">
                       <Rates />
-                      <textarea
-                        className="create__item-textarea"
-                        placeholder="Коментар"
-                      ></textarea>
+                      <div className="aside-popup__form-item aside-popup__textarea">
+                        <textarea
+                          name=""
+                          className="aside-popup__input aside-popup__input-textarea"
+                          id="form-comment"
+                          placeholder="Коментар"
+                        ></textarea>
+                        <label
+                          className="aside-popup__label"
+                          htmlFor="form-comment"
+                        >
+                          Коментар
+                        </label>
+                      </div>
                       <label className="aside-popup__check-box-label create__item-label">
                         <input
                           className="aside-popup__check-box-input"

@@ -39,6 +39,13 @@ export const MyAccountPage = () => {
 
   const [value, setValue] = useState(50);
 
+  const [name, setName] = useState("Iванна");
+  const [suname, setSuName] = useState("Коваленко");
+  const [thname, setThName] = useState("Федорiвна");
+  const [phone, setPhone] = useState("(050) 123-45-67");
+  const [email, setEmail] = useState("test-email@gmail.com");
+  const [skype, setSkype] = useState("");
+
   return (
     <section className="account">
       <div className="container">
@@ -65,7 +72,10 @@ export const MyAccountPage = () => {
                   </div>
                 </div>
                 <div className="account__item-box">
-                  <Link className="button account__item-box-btn" to="/">
+                  <Link
+                    className="button account__item-box-btn"
+                    to="/worksheet"
+                  >
                     Заповнити анкету
                   </Link>
                 </div>
@@ -98,6 +108,8 @@ export const MyAccountPage = () => {
                 className="aside-popup__input"
                 id="form-suname"
                 placeholder="Прізвище"
+                value={suname}
+                disabled
               ></input>
               <label className="aside-popup__label" htmlFor="form-suname">
                 Прізвище
@@ -110,6 +122,8 @@ export const MyAccountPage = () => {
                 className="aside-popup__input"
                 id="form-yname"
                 placeholder="Ваше iм’я"
+                value={name}
+                disabled
               ></input>
               <label className="aside-popup__label" htmlFor="form-yname">
                 Ваше iм’я
@@ -122,6 +136,8 @@ export const MyAccountPage = () => {
                 className="aside-popup__input"
                 id="form-thname"
                 placeholder="По батькові"
+                value={thname}
+                disabled
               ></input>
               <label className="aside-popup__label" htmlFor="form-thname">
                 По батькові
@@ -130,11 +146,11 @@ export const MyAccountPage = () => {
             <div className="aside-popup__form-item">
               <input
                 name=""
-                data-phone
-                data-phone-pattern="+38 (___) ___-__-__"
                 className="aside-popup__input"
                 id="form-phon"
                 placeholder="Моб. номер тел"
+                value={phone}
+                disabled
               ></input>
               <label className="aside-popup__label" htmlFor="form-phon">
                 Моб. номер тел
@@ -146,6 +162,8 @@ export const MyAccountPage = () => {
                 className="aside-popup__input"
                 id="form-mail"
                 placeholder="Email"
+                value={email}
+                disabled
               ></input>
               <label className="aside-popup__label" htmlFor="form-mail">
                 Email
@@ -157,12 +175,14 @@ export const MyAccountPage = () => {
                 className="aside-popup__input"
                 id="form-skype"
                 placeholder="Skype"
+                value={skype}
+                disabled
               ></input>
               <label className="aside-popup__label" htmlFor="form-skype">
                 Skype
               </label>
             </div>
-            <div className="account__data-btn">
+            <Link className="account__data-btn" to="/worksheet">
               <svg
                 width="17"
                 height="22"
@@ -180,7 +200,7 @@ export const MyAccountPage = () => {
                 />
               </svg>
               Змiнити пароль
-            </div>
+            </Link>
           </div>
         </div>
       </div>

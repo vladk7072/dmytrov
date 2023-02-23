@@ -36,6 +36,7 @@ html,
 body {
   height: 100%;
   behavior: smoth;
+  overflow-x: hidden;
 }
 .wrapper {
   min-height: 100%;
