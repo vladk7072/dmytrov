@@ -22,6 +22,7 @@ function App() {
           <Route path="/home" element={<IndexPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/*" element={<BlogNewPage />} />
+          <Route path="/services" element={<Navigate to="standart" />} />
           <Route path="/services/*" element={<ServicesPage />} />
           <Route path="/create" element={<CreatePage />} />
           <Route path="/register" element={<Register />} />

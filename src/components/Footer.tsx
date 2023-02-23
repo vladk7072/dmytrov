@@ -214,7 +214,7 @@ export const Footer = () => {
                   Контакти
                 </a>
               </li>
-              <li className="footer__item">
+              <li className="footer__item footer__item--active">
                 <a className="footer__link" href="#">
                   Прорахувати вартість
                 </a>

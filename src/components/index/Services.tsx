@@ -4,7 +4,6 @@ import "rsuite/dist/rsuite.css";
 import { Rates } from "../Rates";
 
 export const Services = () => {
-
   const [openAside, setOpenAside] = useState(false);
 
   useEffect(() => {
@@ -41,21 +40,40 @@ export const Services = () => {
     }
   }, [openAside]);
 
-  document.addEventListener("click", function (event) {
-    var asidePopup = document.querySelector(".aside-popup");
-    var clickedElement = event.target;
+  if (openAside) {
+    document.addEventListener("click", function (event) {
+      var asidePopup = document.querySelector(".aside-popup");
+      var clickedElement = event.target;
 
-    if (
-      // @ts-ignore
-      asidePopup.contains(clickedElement) &&
-      // @ts-ignore
-      !clickedElement.closest(
-        ".aside-popup__content, .aside-popup__form, .aside-popup__title, .aside-popup__form-item, .aside-popup__input, .aside-popup__label, .aside-popup__check-box-label, .aside-popup__check-box-input, .aside-popup__check-box-style, .aside-popup__btn, .button"
-      )
-    ) {
-      setOpenAside(false);
-    }
-  });
+      if (
+        // @ts-ignore
+        asidePopup.contains(clickedElement) &&
+        // @ts-ignore
+        !clickedElement.closest(
+          ".aside-popup__content, .aside-popup__form, .aside-popup__title, .aside-popup__form-item, .aside-popup__input, .aside-popup__label, .aside-popup__check-box-label, .aside-popup__check-box-input, .aside-popup__check-box-style, .aside-popup__btn, .button"
+        )
+      ) {
+        setOpenAside(false);
+      }
+    });
+  }
+  if (!openAside) {
+    document.removeEventListener("click", function (event) {
+      var asidePopup = document.querySelector(".aside-popup");
+      var clickedElement = event.target;
+
+      if (
+        // @ts-ignore
+        asidePopup.contains(clickedElement) &&
+        // @ts-ignore
+        !clickedElement.closest(
+          ".aside-popup__content, .aside-popup__form, .aside-popup__title, .aside-popup__form-item, .aside-popup__input, .aside-popup__label, .aside-popup__check-box-label, .aside-popup__check-box-input, .aside-popup__check-box-style, .aside-popup__btn, .button"
+        )
+      ) {
+        setOpenAside(false);
+      }
+    });
+  }
 
   return (
     <>

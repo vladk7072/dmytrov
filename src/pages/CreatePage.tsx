@@ -397,7 +397,7 @@ export const CreatePage = () => {
               <span>Етап</span>
               <div className="create__item-count-num">
                 <div className="create__item-count-num create__item-count-num-target">
-                  0{slide}
+                  {slide >= 10 ? slide : `0${slide}`}
                 </div>
                 <div className="create__item-count-num create__item-count-num-all">
                   /05

@@ -1,10 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import bg1 from "../assets/images/services-img/top-bg.jpg";
-import bgSlide from "../assets/images/services-img/slide-1.jpg";
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import { Navigation } from "swiper";
+import "swiper/css/navigation";
 import { ScrollToTopOnMount } from "../helpers/routerup";
+import { dataSevicesSlide } from "../data/servicespage";
 
 export const ServicesPage = () => {
   const dataNav = [
@@ -21,8 +23,46 @@ export const ServicesPage = () => {
       link: "premium",
     },
   ];
+  const dataTarifAbout = [
+    {
+      id: 0,
+      title: "Тариф “Базовий”"
+    },
+    {
+      id: 1,
+      title: "Тариф “Стандарт”"
+    },
+    {
+      id: 2,
+      title: "Тариф “Преміум”"
+    }
+  ]
 
-  var swiper = useSwiper();
+  const swiperNavPrevRef = useRef(null);
+  const swiperNavNextRef = useRef(null);
+
+  const [currentSlide, setCurrentSlide] = useState(1);
+
+  const allSlidesMetrica = dataSevicesSlide.length;
+  var allSlides;
+  if (allSlidesMetrica >= 10) {
+    allSlides = allSlidesMetrica;
+  } else {
+    allSlides = `0${allSlidesMetrica}`;
+  }
+
+  const handleNextSlide = () => {
+    if (currentSlide < allSlidesMetrica) {
+      setCurrentSlide(currentSlide + 1);
+    }
+  };
+  const handlePrevSlide = () => {
+    if (currentSlide > 1) {
+      setCurrentSlide(currentSlide - 1);
+    }
+  };
+
+  const [activeTarif, setActiveTarif] = useState(1);
 
   return (
     <>
@@ -40,34 +80,39 @@ export const ServicesPage = () => {
                   }
                   to={item.link}
                   key={idx}
+                  onClick={() => setActiveTarif(idx)}
                 >
                   {item.title}
                 </NavLink>
               ))}
             </div>
-            <div className="servicespage__content">
-              <div className="servicespage__top">
-                <h1 className="servicespage__top-title">Тариф “Стандарт”</h1>
-                <div className="servicespage__top-box">
-                  <div className="servicespage__top-subtitle">
-                    Технічний проєкт
-                  </div>
-                  <div className="servicespage__top-price">
-                    500
-                    <span>грн/м2</span>
-                  </div>
-                  <a className="servicespage__top-btn button" href="#">
-                    Замовити проєкт
-                  </a>
+          </div>
+        </div>
+        <div className="container">
+          <div className="servicespage__content">
+            <div className="servicespage__top">
+              <h1 className="servicespage__top-title">
+                {dataTarifAbout[activeTarif].title}
+              </h1>
+              <div className="servicespage__top-box">
+                <div className="servicespage__top-subtitle">
+                  Технічний проєкт
                 </div>
-                <p className="servicespage__top-text">
-                  Якщо ви не маєте бажання розбиратись в будівельних тонкощах,
-                  але хочете самостійно вибирати колір шпалер чи модель ліжка —
-                  тоді цей тариф це ваш варіант. Підійде для будь-яких об'єктів
-                  оскільки має в собі всі необхідні креслення та схеми для
-                  правильного ремонту.
-                </p>
+                <div className="servicespage__top-price">
+                  500
+                  <span>грн/м2</span>
+                </div>
+                <a className="servicespage__top-btn button" href="#">
+                  Замовити проєкт
+                </a>
               </div>
+              <p className="servicespage__top-text">
+                Якщо ви не маєте бажання розбиратись в будівельних тонкощах, але
+                хочете самостійно вибирати колір шпалер чи модель ліжка — тоді
+                цей тариф це ваш варіант. Підійде для будь-яких об'єктів
+                оскільки має в собі всі необхідні креслення та схеми для
+                правильного ремонту.
+              </p>
             </div>
           </div>
         </div>
@@ -78,75 +123,46 @@ export const ServicesPage = () => {
           <div className="container servicespage__slider-container">
             <div className="servicespage__slider-inner">
               <Swiper
-                slidesPerGroup={1}
+                modules={[Navigation]}
+                navigation={{
+                  prevEl: swiperNavPrevRef.current,
+                  nextEl: swiperNavNextRef.current,
+                }}
+                speed={500}
                 slidesPerView={1}
-                onSlideChange={() => console.log("slide change")}
-                onSwiper={(swiper) => console.log(swiper)}
+                onInit={(swiper: any) => {
+                  swiper.params.navigation.prevEl = swiperNavPrevRef.current;
+                  swiper.params.navigation.nextEl = swiperNavNextRef.current;
+                  swiper.navigation.init();
+                  swiper.navigation.update();
+                }}
               >
-                <SwiperSlide>
-                  <div className="servicespage__slide">
-                    <div className="servicespage__slide-content">
-                      <h4 className="servicespage__slide-title">
-                        Титульний лист
-                      </h4>
-                      <p className="servicespage__slide-text">
-                        На даній сторінці зображується майбутній об'єкт, що
-                        виконується. Також вказуються всі необхідні контактні
-                        дані Завмовника та Виконавця, які зможуть використати
-                        Будівельники у випадку виникнення будь-яких питань під
-                        час роботи. Даний лист рекомендований для ламінування
-                        задля кращого захисту контактних даних та змісту
-                        проєкту.
-                      </p>
-                    </div>
-                    <div className="servicespage__slide-img">
-                      <img src={bgSlide} alt="" />
-                      <div className="servicespage__slide-aside">
-                        <div className="servicespage__slide-aside-title">
-                          Адреса
-                        </div>
-                        <div className="servicespage__slide-aside-title">
-                          Контактні данні замовника
-                        </div>
-                        <div className="servicespage__slide-aside-title servicespage__slide-aside-title--down">
-                          Контактні данні виконавця
+                {dataSevicesSlide.map((item) => (
+                  <SwiperSlide>
+                    <div className="servicespage__slide">
+                      <div className="servicespage__slide-content">
+                        <h4 className="servicespage__slide-title">
+                          {item.title}
+                        </h4>
+                        <p className="servicespage__slide-text">{item.text}</p>
+                      </div>
+                      <div className="servicespage__slide-img">
+                        <img src={item.bg} alt="" />
+                        <div className="servicespage__slide-aside">
+                          <div className="servicespage__slide-aside-title">
+                            {item.address}
+                          </div>
+                          <div className="servicespage__slide-aside-title">
+                            {item.contactdataorders}
+                          </div>
+                          <div className="servicespage__slide-aside-title servicespage__slide-aside-title--down">
+                            {item.contactdatausers}
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="servicespage__slide">
-                    <div className="servicespage__slide-content">
-                      <h4 className="servicespage__slide-title">
-                        Титульний лист
-                      </h4>
-                      <p className="servicespage__slide-text">
-                        На даній сторінці зображується майбутній об'єкт, що
-                        виконується. Також вказуються всі необхідні контактні
-                        дані Завмовника та Виконавця, які зможуть використати
-                        Будівельники у випадку виникнення будь-яких питань під
-                        час роботи. Даний лист рекомендований для ламінування
-                        задля кращого захисту контактних даних та змісту
-                        проєкту.
-                      </p>
-                    </div>
-                    <div className="servicespage__slide-img">
-                      <img src={bgSlide} alt="" />
-                      <div className="servicespage__slide-aside">
-                        <div className="servicespage__slide-aside-title">
-                          Адреса
-                        </div>
-                        <div className="servicespage__slide-aside-title">
-                          Контактні данні замовника
-                        </div>
-                        <div className="servicespage__slide-aside-title servicespage__slide-aside-title--down">
-                          Контактні данні виконавця
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </SwiperSlide>
+                  </SwiperSlide>
+                ))}
               </Swiper>
             </div>
           </div>
@@ -154,13 +170,16 @@ export const ServicesPage = () => {
         <div className="container servicespage__slider-container servicespage__slider-bar">
           <div className="servicespage__slider-nav">
             <div className="servicespage__coun">
-              <div className="servicespage__coun-target">01</div>
-              <div className="servicespage__coun-all">/24</div>
+              <div className="servicespage__coun-target">
+                {currentSlide >= 10 ? currentSlide : `0${currentSlide}`}
+              </div>
+              <div className="servicespage__coun-all">/{allSlides}</div>
             </div>
             <div className="servicespage__arrows">
               <div
                 className="servicespage__arrow servicespage__arrow-prev"
-                onClick={() => swiper.slidePrev()}
+                ref={swiperNavPrevRef}
+                onClick={() => handlePrevSlide()}
               >
                 <svg
                   width="38"
@@ -172,13 +191,13 @@ export const ServicesPage = () => {
                   <path
                     d="M15.466 29.2471L16.9407 27.5789L3.96966 16.1129L38 16.1129L38 13.8863L3.96966 13.8863L16.9407 2.42033L15.466 0.752113L2.51879e-06 14.4236L2.6195e-06 15.5756L15.466 29.2471Z"
                     fill="#353535"
-                    fillOpacity="0.4"
                   />
                 </svg>
               </div>
               <div
                 className="servicespage__arrow servicespage__arrow-next"
-                onClick={() => swiper.allowSlideNext}
+                ref={swiperNavNextRef}
+                onClick={() => handleNextSlide()}
               >
                 <svg
                   width="38"

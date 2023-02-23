@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import { Navigation } from "swiper";
+import "swiper/css/navigation";
 import bg1 from "../../assets/images/indexslider-img/bg.jpg";
 import bg2 from "../../assets/images/indexslider-img/bg2.jpg";
 import bg3 from "../../assets/images/indexslider-img/bg3.jpg";
@@ -12,11 +15,41 @@ import hover5 from "../../assets/images/indexslider-img/hover-5.jpg";
 import hover6 from "../../assets/images/indexslider-img/hover-6.jpg";
 
 export const IndexSlide = () => {
+  const swiperNavPrevRef = useRef(null);
+  const swiperNavNextRef = useRef(null);
+
+  const [currentSlide, setCurrentSlide] = useState(1);
+
+  const handleNextSlide = () => {
+    if(currentSlide < 4){
+      setCurrentSlide(currentSlide + 1);
+    }
+  }
+  const handlePrevSlide = () => {
+    if(currentSlide > 1){
+      setCurrentSlide(currentSlide - 1);
+    }
+  }
+
   return (
     <section className="indexslide">
       <div className="container">
         <div className="indexslide__wrapper">
-          <Swiper>
+          <Swiper
+            modules={[Navigation]}
+            navigation={{
+              prevEl: swiperNavPrevRef.current,
+              nextEl: swiperNavNextRef.current,
+            }}
+            speed={500}
+            slidesPerView={1}
+            onInit={(swiper: any) => {
+              swiper.params.navigation.prevEl = swiperNavPrevRef.current;
+              swiper.params.navigation.nextEl = swiperNavNextRef.current;
+              swiper.navigation.init();
+              swiper.navigation.update();
+            }}
+          >
             <SwiperSlide>
               <div className="swiper-slide indexslide__slide">
                 <div className="indexslide__slide-area">
@@ -131,14 +164,18 @@ export const IndexSlide = () => {
           <div className="indexslide__bar">
             <div className="indexslide__bar-count">
               <div className="indexslide__bar-count-num indexslide__bar-count-target">
-                01
+                0{currentSlide}
               </div>
               <div className="indexslide__bar-count-num indexslide__bar-count-all">
                 /04
               </div>
             </div>
             <div className="indexslide__bar-arrows">
-              <div className="indexslide__bar-arrow indexslide__bar-arrow-prev">
+              <div
+                className="indexslide__bar-arrow indexslide__bar-arrow-prev"
+                ref={swiperNavPrevRef}
+                onClick={() => handlePrevSlide()}
+              >
                 <svg
                   width="38"
                   height="30"
@@ -149,11 +186,14 @@ export const IndexSlide = () => {
                   <path
                     d="M15.466 29.2471L16.9407 27.5789L3.96966 16.1129L38 16.1129L38 13.8863L3.96966 13.8863L16.9407 2.42033L15.466 0.752113L2.51879e-06 14.4236L2.6195e-06 15.5756L15.466 29.2471Z"
                     fill="white"
-                    fill-opacity="0.4"
                   />
                 </svg>
               </div>
-              <div className="indexslide__bar-arrow indexslide__bar-arrow-next">
+              <div
+                className="indexslide__bar-arrow indexslide__bar-arrow-next"
+                ref={swiperNavNextRef}
+                onClick={() => handleNextSlide()}
+              >
                 <svg
                   width="38"
                   height="30"
