@@ -388,8 +388,12 @@ $accent: #e55733;
       font-size: 16px;
       line-height: 19px;
       color: #353535;
+      transition: color 0.2s;
       &:hover {
-        color: #353535;
+        color: $accent;
+      }
+      &:focus {
+        color: $accent;
       }
     }
     &-item {
@@ -400,6 +404,28 @@ $accent: #e55733;
       justify-content: center;
       & + & {
         margin-left: 6px;
+      }
+      svg {
+        path {
+          transition: fill 0.2s;
+        }
+      }
+      &:hover {
+        svg {
+          path {
+            fill: $accent;
+          }
+        }
+      }
+      &-th{
+        &:hover{
+          svg {
+            path {
+              fill: #343434;
+              stroke: $accent;
+            }
+          }
+        }
       }
     }
   }
@@ -499,7 +525,7 @@ $accent: #e55733;
       display: flex;
       justify-content: center;
       align-items: center;
-      &:focus{
+      &:focus {
         color: #353535;
       }
     }
@@ -653,7 +679,7 @@ $accent: #e55733;
           }
         }
         &-1 {
-          top: 98px;
+          top: 140px;
           left: 121px;
           z-index: 4;
           img {
@@ -669,8 +695,8 @@ $accent: #e55733;
           }
         }
         &-2 {
-          bottom: 362px;
-          left: 113px;
+          bottom: 350px;
+          left: 150px;
           z-index: 4;
           img {
             position: absolute;
@@ -686,7 +712,7 @@ $accent: #e55733;
         }
         &-3 {
           bottom: 90px;
-          right: 194px;
+          right: 100px;
           z-index: 4;
           img {
             position: absolute;
@@ -717,8 +743,8 @@ $accent: #e55733;
           }
         }
         &-5 {
-          top: 270px;
-          left: 140px;
+          top: 340px;
+          right: 220px;
           z-index: 4;
           img {
             position: absolute;
@@ -733,7 +759,7 @@ $accent: #e55733;
           }
         }
         &-6 {
-          top: 190px;
+          top: 300px;
           left: 190px;
           z-index: 4;
           img {
@@ -751,28 +777,28 @@ $accent: #e55733;
         &::before {
           content: "";
           position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
+          top: -15px;
+          left: -15px;
           height: 60px;
           width: 60px;
           background: #e55733;
           opacity: 0.2;
           border-radius: 50%;
           z-index: -1;
+          animation: pulse 2s infinite;
         }
         &::after {
           content: "";
           position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
+          top: -27px;
+          left: -27px;
           height: 85px;
           width: 85px;
           background: #e55733;
           opacity: 0.1;
           border-radius: 50%;
           z-index: -2;
+          animation: pulse 2s infinite;
         }
       }
     }
@@ -1233,8 +1259,8 @@ $accent: #e55733;
   z-index: 100;
   opacity: 0;
   visibility: hidden;
-  transition: all .2s;
-  &--active{
+  transition: all 0.2s;
+  &--active {
     opacity: 1;
     visibility: visible;
   }
@@ -1425,7 +1451,7 @@ $accent: #e55733;
     line-height: 19px;
     text-decoration-line: underline;
     color: #e55733;
-    &:hover{
+    &:hover {
       color: $accent;
       text-decoration: underline;
     }
@@ -1529,7 +1555,6 @@ $accent: #e55733;
     }
   }
   &__bg {
-    background-color: #d9d2cc;
     img {
       height: 530px;
       width: 100%;
@@ -3102,5 +3127,17 @@ $accent: #e55733;
         height: 24px;
       }
     }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
   }
 }

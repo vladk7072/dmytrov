@@ -4,6 +4,40 @@ $accent: #e55733;
     right: 15px;
   }
 }
+@media (max-width: 1600px) {
+  .indexslide {
+    &__slide {
+      &-area {
+        &-box {
+          &-1 {
+            top: 140px;
+            left: 40px;
+          }
+          &-2 {
+            bottom: 350px;
+            left: 90px;
+          }
+          &-3 {
+            bottom: 250px;
+            right: 60px;
+          }
+          &-4 {
+            top: 285px;
+            right: 66px;
+          }
+          &-5 {
+            top: 340px;
+            right: 140px;
+          }
+          &-6 {
+            top: 300px;
+            left: 90px;
+          }
+        }
+      }
+    }
+  }
+}
 @media (max-width: 1296px) {
   .indexslide {
     padding: 0;
@@ -160,6 +194,38 @@ $accent: #e55733;
       }
     }
   }
+  .indexslide {
+    &__slide {
+      &-area {
+        &-box {
+          &-1 {
+            top: 140px;
+            left: 10px;
+          }
+          &-2 {
+            bottom: 350px;
+            left: 10px;
+          }
+          &-3 {
+            bottom: 250px;
+            right: 60px;
+          }
+          &-4 {
+            top: 285px;
+            right: 66px;
+          }
+          &-5 {
+            top: 340px;
+            right: 40px;
+          }
+          &-6 {
+            top: 300px;
+            left: 20px;
+          }
+        }
+      }
+    }
+  }
 }
 @media (max-width: 768px) {
   .top {
@@ -259,8 +325,8 @@ $accent: #e55733;
               top: 75px;
             }
             &-5 {
-              left: 46px;
-              top: 75px;
+              right: 140px;
+              top: 100px;
             }
             &-6 {
               left: 66px;
@@ -432,6 +498,9 @@ $accent: #e55733;
   }
   .questions {
     padding: 73px 0 83px;
+    &-page {
+      padding-top: 67px;
+    }
     &__title {
       margin-bottom: 35px;
       font-size: 30px;
@@ -513,9 +582,9 @@ $accent: #e55733;
       font-size: 16px;
       line-height: 150%;
     }
-    &__form{
-      &-item{
-        & + &{
+    &__form {
+      &-item {
+        & + & {
           margin-top: 10px;
         }
       }
@@ -537,7 +606,7 @@ $accent: #e55733;
         }
       }
     }
-    &__btn{
+    &__btn {
       padding: 14px 10px;
     }
   }
@@ -582,6 +651,23 @@ $accent: #e55733;
         color: #353535;
         border: 1px solid $accent;
         box-shadow: none;
+      }
+    }
+  }
+  .indexslide{
+    &__slide{
+      &-area{
+        &-mob{
+          &-item{
+            &-2{
+              left: 70px;
+            }
+            &-5{
+              top: 120px;
+              right: 90px;
+            }
+          }
+        }
       }
     }
   }

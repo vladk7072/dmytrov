@@ -36,9 +36,6 @@ export const Top = () => {
           <img src={bg} alt="" />
         </div>
       </div>
-      <div className="top__image">
-        <img src={bgContainer} alt="" />
-      </div>
     </section>
   );
 };

@@ -7,37 +7,9 @@ import { Navigation } from "swiper";
 import "swiper/css/navigation";
 import { ScrollToTopOnMount } from "../helpers/routerup";
 import { dataSevicesSlide } from "../data/servicespage";
+import { dataNav, dataTarifAbout } from "../data/services";
 
 export const ServicesPage = () => {
-  const dataNav = [
-    {
-      title: "Тариф “Базовий”",
-      link: "basic",
-    },
-    {
-      title: "Тариф “Стандарт”",
-      link: "standart",
-    },
-    {
-      title: "Тариф “Премiум”",
-      link: "premium",
-    },
-  ];
-  const dataTarifAbout = [
-    {
-      id: 0,
-      title: "Тариф “Базовий”",
-    },
-    {
-      id: 1,
-      title: "Тариф “Стандарт”",
-    },
-    {
-      id: 2,
-      title: "Тариф “Преміум”",
-    },
-  ];
-
   const swiperNavPrevRef = useRef(null);
   const swiperNavNextRef = useRef(null);
 
@@ -205,7 +177,7 @@ export const ServicesPage = () => {
         </div>
       </section>
 
-      <section className="compose">
+      {/* <section className="compose">
         <div className="container">
           <div className="compose__wrapper">
             <h3 className="compose__title">Порiвняння тарифiв</h3>
@@ -663,7 +635,7 @@ export const ServicesPage = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 };
