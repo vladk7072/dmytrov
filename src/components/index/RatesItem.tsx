@@ -25,6 +25,12 @@ export const RatesItem: FC<PropsType> = (props) => {
           Переглянути зміст
         </a>
         <p className="rates__text">{props.item.text}</p>
+        <p className="rates__text rates__text-mob">
+          {props.item.text}
+          <a href="#" className="rates__text-more">
+            Читати далi
+          </a>
+        </p>
       </div>
     </div>
   );

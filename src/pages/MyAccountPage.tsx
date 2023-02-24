@@ -46,6 +46,8 @@ export const MyAccountPage = () => {
   const [email, setEmail] = useState("test-email@gmail.com");
   const [skype, setSkype] = useState("");
 
+  const [editMode, setEditMode] = useState(false);
+
   return (
     <section className="account">
       <div className="container">
@@ -85,7 +87,10 @@ export const MyAccountPage = () => {
           <div className="account__box-data">
             <div className="account__data-top">
               <div className="account__data-title">Особисті данні</div>
-              <div className="account__data-edit">
+              <div
+                className="account__data-edit"
+                onClick={() => setEditMode(true)}
+              >
                 Редагувати
                 <svg
                   width="14"
@@ -109,7 +114,8 @@ export const MyAccountPage = () => {
                 id="form-suname"
                 placeholder="Прізвище"
                 value={suname}
-                disabled
+                onChange={(e) => setSuName(e.currentTarget.value)}
+                disabled={!editMode}
               ></input>
               <label className="aside-popup__label" htmlFor="form-suname">
                 Прізвище
@@ -123,7 +129,8 @@ export const MyAccountPage = () => {
                 id="form-yname"
                 placeholder="Ваше iм’я"
                 value={name}
-                disabled
+                onChange={(e) => setName(e.currentTarget.value)}
+                disabled={!editMode}
               ></input>
               <label className="aside-popup__label" htmlFor="form-yname">
                 Ваше iм’я
@@ -137,7 +144,8 @@ export const MyAccountPage = () => {
                 id="form-thname"
                 placeholder="По батькові"
                 value={thname}
-                disabled
+                onChange={(e) => setThName(e.currentTarget.value)}
+                disabled={!editMode}
               ></input>
               <label className="aside-popup__label" htmlFor="form-thname">
                 По батькові
@@ -150,7 +158,8 @@ export const MyAccountPage = () => {
                 id="form-phon"
                 placeholder="Моб. номер тел"
                 value={phone}
-                disabled
+                onChange={(e) => setPhone(e.currentTarget.value)}
+                disabled={!editMode}
               ></input>
               <label className="aside-popup__label" htmlFor="form-phon">
                 Моб. номер тел
@@ -163,7 +172,8 @@ export const MyAccountPage = () => {
                 id="form-mail"
                 placeholder="Email"
                 value={email}
-                disabled
+                onChange={(e) => setEmail(e.currentTarget.value)}
+                disabled={!editMode}
               ></input>
               <label className="aside-popup__label" htmlFor="form-mail">
                 Email
@@ -176,13 +186,17 @@ export const MyAccountPage = () => {
                 id="form-skype"
                 placeholder="Skype"
                 value={skype}
-                disabled
+                onChange={(e) => setSkype(e.currentTarget.value)}
+                disabled={!editMode}
               ></input>
               <label className="aside-popup__label" htmlFor="form-skype">
                 Skype
               </label>
             </div>
-            <Link className="account__data-btn" to="/worksheet">
+            <div
+              className="account__data-btn"
+              onClick={() => setEditMode(false)}
+            >
               <svg
                 width="17"
                 height="22"
@@ -200,7 +214,7 @@ export const MyAccountPage = () => {
                 />
               </svg>
               Змiнити пароль
-            </Link>
+            </div>
           </div>
         </div>
       </div>

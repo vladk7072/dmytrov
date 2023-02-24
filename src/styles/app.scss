@@ -4,6 +4,7 @@ html {
 html,
 body {
   font-variant-numeric: lining-nums;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -176,9 +177,30 @@ $accent: #e55733;
   border-width: 6px 6px 0;
   border-top-color: $accent;
 }
-
+.up {
+  display: inline-block;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 1px solid #545454;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 15px;
+  right: 10%;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s;
+  &--active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
 .footer {
   background: #1c1c1c;
+  position: relative;
   &__wrapper {
     display: flex;
     justify-content: space-between;
@@ -258,6 +280,7 @@ $accent: #e55733;
     &-link {
       display: inline-block;
       padding: 5px 0;
+      text-decoration: underline;
     }
     &-text {
       @extend %ral-500;
@@ -300,12 +323,17 @@ $accent: #e55733;
     align-items: center;
     justify-content: space-between;
     min-height: 120px;
-    padding: 3px 0 12px;
+    padding: 10px 0;
   }
   &__nav {
     display: flex;
     flex-direction: column;
     grid-gap: 36px;
+    &-btn {
+      &-mob {
+        display: none;
+      }
+    }
     &-list {
       display: flex;
       align-items: center;
@@ -337,6 +365,12 @@ $accent: #e55733;
       }
       &--active {
         color: $accent;
+      }
+      &--accent {
+        color: $accent;
+        img {
+          margin-right: 11px;
+        }
       }
       &:focus {
         color: $accent;
@@ -398,17 +432,83 @@ $accent: #e55733;
       & + & {
         margin-left: 22px;
       }
+      &-black {
+        background: #353535;
+      }
+      &-mob {
+        display: none;
+        &-menu {
+          width: 18px;
+          height: 12px;
+          position: relative;
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: #fff;
+            border-radius: 2px;
+            transition: transform 0.2s;
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: #fff;
+            border-radius: 2px;
+            transition: transform 0.2s;
+          }
+          span {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: #fff;
+            border-radius: 2px;
+            opacity: 1;
+            transition: all 0.2s;
+          }
+          &--active {
+            span {
+              opacity: 0;
+            }
+            &::before {
+              transform: rotate(-45deg);
+              top: 5px;
+            }
+            &::after {
+              transform: rotate(45deg);
+              bottom: 5px;
+            }
+          }
+        }
+      }
     }
     &-link {
       @extend %ral-700;
       font-size: 16px;
       line-height: 19px;
       color: #353535;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 }
 .top {
   padding: 225px 0 60px;
+  &__mob {
+    &-btn {
+      display: none;
+    }
+  }
   &__wrapper {
     display: flex;
     justify-content: space-between;
@@ -458,6 +558,23 @@ $accent: #e55733;
       }
     }
   }
+  &__mob {
+    &-img {
+      display: none;
+    }
+  }
+  &__slide {
+    &-area {
+      min-height: 572px;
+      &-img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &-box {
+      min-height: 572px;
+    }
+  }
   &__slide {
     display: grid;
     grid-template-columns: minmax(auto, 770px) minmax(auto, 526px);
@@ -498,6 +615,13 @@ $accent: #e55733;
   &__slide {
     &-area {
       position: relative;
+      &-mob {
+        display: none;
+        &-item {
+          display: none;
+          @extend %ral-800;
+        }
+      }
       &-item {
         @extend %ral-800;
         font-size: 14px;
@@ -694,11 +818,9 @@ $accent: #e55733;
     overflow: hidden;
     cursor: pointer;
     transition: all 0.4s ease-in-out;
+    border-bottom: 1px solid #000;
     &--active {
       max-height: 500px;
-    }
-    & + & {
-      border-top: 1px solid #000;
     }
     &-line {
       display: flex;
@@ -749,6 +871,16 @@ $accent: #e55733;
     }
     &-list {
       margin-top: 20px;
+    }
+    &-text {
+      @extend %ral-500;
+      font-size: 16px;
+      line-height: 150%;
+      color: #353535;
+      margin-left: 20px;
+      &-box {
+        margin-top: 20px;
+      }
     }
   }
   &__grid {
@@ -804,6 +936,12 @@ $accent: #e55733;
           background-color: $accent;
         }
       }
+      & .rates__price {
+        color: $accent;
+        span {
+          color: $accent;
+        }
+      }
     }
     &-top {
       padding: 40px 34px 16px;
@@ -847,12 +985,14 @@ $accent: #e55733;
     color: #353535;
     display: flex;
     justify-content: center;
+    transition: color 0.2s;
     span {
       @extend %ral-700;
       margin-left: 3px;
       font-size: 20px;
       line-height: 100%;
       color: #353535;
+      transition: color 0.2s;
     }
   }
   &__link {
@@ -880,6 +1020,17 @@ $accent: #e55733;
     font-size: 16px;
     line-height: 150%;
     color: #353535;
+    &-mob {
+      display: none;
+    }
+    &-more {
+      @extend %ral-700;
+      font-size: 13px;
+      line-height: 15px;
+      text-decoration-line: underline;
+      color: #353535;
+      margin-left: 3px;
+    }
   }
 }
 .services {
@@ -900,6 +1051,9 @@ $accent: #e55733;
     }
     &-btn {
       padding: 20px 37px;
+      &-mob {
+        display: none;
+      }
     }
   }
   &__inner {
@@ -1074,6 +1228,13 @@ $accent: #e55733;
   left: 0;
   background: rgba(30, 30, 30, 0.5);
   z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .2s;
+  &--active{
+    opacity: 1;
+    visibility: visible;
+  }
   &__content {
     background-color: #fff;
     padding: 60px;
@@ -1304,7 +1465,7 @@ $accent: #e55733;
         color: $accent;
         border-bottom: 2px solid $accent;
       }
-      &:focus{
+      &:focus {
         color: $accent;
       }
     }
@@ -1706,10 +1867,6 @@ $accent: #e55733;
     max-width: 857px;
     width: 100%;
   }
-  &__aside {
-    max-width: 306px;
-    width: 100%;
-  }
   &__title {
     margin-bottom: 33px;
     @extend %ral-600;
@@ -1811,10 +1968,8 @@ $accent: #e55733;
   }
   &__aside {
     margin-top: 315px;
-    &-col {
-      position: sticky;
-      top: 30px;
-    }
+    max-width: 306px;
+    width: 100%;
     &-title {
       margin-bottom: 26px;
       @extend %ral-600;

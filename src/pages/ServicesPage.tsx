@@ -26,17 +26,17 @@ export const ServicesPage = () => {
   const dataTarifAbout = [
     {
       id: 0,
-      title: "Тариф “Базовий”"
+      title: "Тариф “Базовий”",
     },
     {
       id: 1,
-      title: "Тариф “Стандарт”"
+      title: "Тариф “Стандарт”",
     },
     {
       id: 2,
-      title: "Тариф “Преміум”"
-    }
-  ]
+      title: "Тариф “Преміум”",
+    },
+  ];
 
   const swiperNavPrevRef = useRef(null);
   const swiperNavNextRef = useRef(null);
@@ -50,17 +50,6 @@ export const ServicesPage = () => {
   } else {
     allSlides = `0${allSlidesMetrica}`;
   }
-
-  const handleNextSlide = () => {
-    if (currentSlide < allSlidesMetrica) {
-      setCurrentSlide(currentSlide + 1);
-    }
-  };
-  const handlePrevSlide = () => {
-    if (currentSlide > 1) {
-      setCurrentSlide(currentSlide - 1);
-    }
-  };
 
   const [activeTarif, setActiveTarif] = useState(1);
 
@@ -136,6 +125,7 @@ export const ServicesPage = () => {
                   swiper.navigation.init();
                   swiper.navigation.update();
                 }}
+                onSlideChange={(swiper) => setCurrentSlide(swiper.activeIndex)}
               >
                 {dataSevicesSlide.map((item) => (
                   <SwiperSlide>
@@ -171,7 +161,7 @@ export const ServicesPage = () => {
           <div className="servicespage__slider-nav">
             <div className="servicespage__coun">
               <div className="servicespage__coun-target">
-                {currentSlide >= 10 ? currentSlide : `0${currentSlide}`}
+                {currentSlide >= 10 ? currentSlide + 1 : `0${currentSlide + 1}`}
               </div>
               <div className="servicespage__coun-all">/{allSlides}</div>
             </div>
@@ -179,7 +169,6 @@ export const ServicesPage = () => {
               <div
                 className="servicespage__arrow servicespage__arrow-prev"
                 ref={swiperNavPrevRef}
-                onClick={() => handlePrevSlide()}
               >
                 <svg
                   width="38"
@@ -197,7 +186,6 @@ export const ServicesPage = () => {
               <div
                 className="servicespage__arrow servicespage__arrow-next"
                 ref={swiperNavNextRef}
-                onClick={() => handleNextSlide()}
               >
                 <svg
                   width="38"

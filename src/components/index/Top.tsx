@@ -9,6 +9,7 @@ export const Top = () => {
       <div className="container">
         <div className="top__wrapper">
           <div className="top__box">
+            <div className="button top__mob-btn">Замовити проєкт</div>
             <h1 className="top__title">
               Розробка технiчного та дизайн-проєкту
             </h1>
