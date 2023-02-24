@@ -51,6 +51,9 @@ export const MyAccountPage = () => {
   return (
     <section className="account">
       <div className="container">
+        <div className="button top__mob-btn button top__mob-btn-mb12">
+          Замовити проєкт
+        </div>
         <div className="account__wrapper">
           <div className="account__box-image">
             <div className="account__title-box">
@@ -81,6 +84,27 @@ export const MyAccountPage = () => {
                     Заповнити анкету
                   </Link>
                 </div>
+              </div>
+            </div>
+          </div>
+          <div className="account__subtitle account__subtitle-mob">Заявки</div>
+          <div className="account__item account__item-mob">
+            <div className="account__item-subtitle">Заявка</div>
+            <div className="account__item-title">Дегтярівська 21</div>
+            <div className="account__item-inner">
+              <div className="account__item-box">
+                <div className="account__item-box-top">
+                  <div className="account__item-box-title">Заповнено</div>
+                  <div className="account__item-box-num">{value}%</div>
+                </div>
+                <div className="account__item-box-line">
+                  <span style={{ width: `${value}%` }}></span>
+                </div>
+              </div>
+              <div className="account__item-box">
+                <Link className="button account__item-box-btn" to="/worksheet">
+                  Заповнити анкету
+                </Link>
               </div>
             </div>
           </div>

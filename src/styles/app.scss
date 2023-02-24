@@ -2421,6 +2421,9 @@ $accent: #e55733;
       max-width: 372px;
       width: 100%;
     }
+    & + & {
+      border-left: 1px solid #ddd;
+    }
     &-title {
       margin-bottom: 19px;
       font-size: 24px;
@@ -2463,6 +2466,7 @@ $accent: #e55733;
       position: relative;
       padding-top: 63px;
       padding-right: 133px;
+      z-index: 10;
       &::before {
         content: "";
         position: absolute;
@@ -2494,6 +2498,9 @@ $accent: #e55733;
     line-height: 150%;
     color: #353535;
     margin: 34px 0 24px;
+    &-mob {
+      display: none;
+    }
   }
   &__logo {
     width: 88px;
@@ -2517,6 +2524,9 @@ $accent: #e55733;
   &__item {
     padding: 27px 42px 32px;
     background-color: #fff;
+    &-mob {
+      display: none;
+    }
     &-inner {
       display: grid;
       grid-template-columns: minmax(auto, 366px) minmax(auto, 240px);
@@ -3278,7 +3288,7 @@ $accent: #e55733;
       display: flex;
       justify-content: space-between;
       grid-gap: 30px;
-      img{
+      img {
         object-fit: contain;
       }
     }
