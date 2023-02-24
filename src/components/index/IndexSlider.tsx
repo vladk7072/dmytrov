@@ -23,8 +23,35 @@ export const IndexSlide = () => {
   const [numSlideImg, setNumSlideImg] = useState<any>(null);
 
   const handleAddMobImg = (imgNum: number) => {
-    setNumSlideImg(imgNum);
+    setNumSlideImg(dataMobImg[imgNum].img);
   };
+
+  const dataMobImg = [
+    {
+      id: 0,
+      img: hover1
+    },
+    {
+      id: 1,
+      img: hover2
+    },
+    {
+      id: 2,
+      img: hover3
+    },
+    {
+      id: 3,
+      img: hover4
+    },
+    {
+      id: 4,
+      img: hover5
+    },
+    {
+      id: 5,
+      img: hover6
+    },
+  ]
 
   return (
     <>
@@ -50,7 +77,7 @@ export const IndexSlide = () => {
                 </svg>
               </div>
               <img
-                src={`../../assets/images/indexslider-img/hover-${numSlideImg}.jpg`}
+                src={numSlideImg}
                 alt=""
               />
             </div>
@@ -115,25 +142,25 @@ export const IndexSlide = () => {
                       <img src={bg1} alt="" />
                       <div
                         className="indexslide__slide-area-mob-item indexslide__slide-area-mob-item-1"
-                        onClick={() => handleAddMobImg(1)}
+                        onClick={() => handleAddMobImg(0)}
                       >
                         01
                       </div>
                       <div
                         className="indexslide__slide-area-mob-item indexslide__slide-area-mob-item-2"
-                        onClick={() => handleAddMobImg(2)}
+                        onClick={() => handleAddMobImg(1)}
                       >
                         02
                       </div>
                       <div
                         className="indexslide__slide-area-mob-item indexslide__slide-area-mob-item-3"
-                        onClick={() => handleAddMobImg(3)}
+                        onClick={() => handleAddMobImg(2)}
                       >
                         03
                       </div>
                       <div
                         className="indexslide__slide-area-mob-item indexslide__slide-area-mob-item-4"
-                        onClick={() => handleAddMobImg(4)}
+                        onClick={() => handleAddMobImg(3)}
                       >
                         04
                       </div>
@@ -173,7 +200,7 @@ export const IndexSlide = () => {
                     </div>
                     <div
                       className="indexslide__slide-area-mob"
-                      onClick={() => handleAddMobImg(5)}
+                      onClick={() => handleAddMobImg(4)}
                     >
                       <img src={bg2} alt="" />
                       <div className="indexslide__slide-area-mob-item indexslide__slide-area-mob-item-5">
@@ -214,7 +241,7 @@ export const IndexSlide = () => {
                     </div>
                     <div
                       className="indexslide__slide-area-mob"
-                      onClick={() => handleAddMobImg(6)}
+                      onClick={() => handleAddMobImg(5)}
                     >
                       <img src={bg3} alt="" />
                       <div className="indexslide__slide-area-mob-item indexslide__slide-area-mob-item-6">
