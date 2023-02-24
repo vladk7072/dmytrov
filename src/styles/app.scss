@@ -1425,6 +1425,10 @@ $accent: #e55733;
     line-height: 19px;
     text-decoration-line: underline;
     color: #e55733;
+    &:hover{
+      color: $accent;
+      text-decoration: underline;
+    }
   }
   &__btn {
     padding: 20px 15px;
