@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { QuestionItem } from "../components/index/QuestionItem";
 import { ScrollToTopOnMount } from "../helpers/routerup";
 
@@ -25,6 +26,9 @@ export const QuestionPage = () => {
                 <QuestionItem item={item} key={idx} line={true} />
               ))}
             </div>
+            <Link className="button questions__btn" to="../contacts">
+              Поставити питання
+            </Link>
           </div>
         </div>
       </section>

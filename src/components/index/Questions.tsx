@@ -1,16 +1,10 @@
 import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { dataQuestionsGrid, dataQuestionsLine } from "../../data/questions";
 import { QuestionItem } from "./QuestionItem";
 
 export const Questions = () => {
-  const dataQuestionsGrid = [
-    { title: "З чого він складається" },
-  ];
-  const dataQuestionsLine = [
-    { title: "Що дає проект?" },
-    { title: "Вартість та терміни" },
-    { title: "Як проходить взаємодія" },
-  ];
+
 
   return (
     <section className="questions">

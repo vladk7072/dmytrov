@@ -13,6 +13,8 @@ import { WorksheetPage } from "./pages/WorksheetPage";
 import { QuestionPage } from "./pages/QuestionsPage";
 import "./styles/app.scss";
 import "./styles/media.scss";
+import { ContactsPage } from "./pages/ContactsPage";
+import { AllServices } from "./pages/AllServices";
 
 function App() {
   const [visibleUp, setVisibleUp] = useState(false);
@@ -44,11 +46,13 @@ function App() {
           <Route path="/blog/*" element={<BlogNewPage />} />
           <Route path="/services" element={<Navigate to="standart" />} />
           <Route path="/services/*" element={<ServicesPage />} />
+          <Route path="/services/all" element={<AllServices />} />
           <Route path="/create" element={<CreatePage />} />
           <Route path="/register" element={<Register />} />
           <Route path="/account" element={<MyAccountPage />} />
           <Route path="/worksheet" element={<WorksheetPage />} />
           <Route path="/questions" element={<QuestionPage />} />
+          <Route path="/contacts" element={<ContactsPage />} />
         </Routes>
       </div>
       <Footer />

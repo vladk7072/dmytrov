@@ -1,86 +1,21 @@
 import { Link } from "react-router-dom";
-import img1 from "../assets/images/blog-img/1.jpg";
-import img2 from "../assets/images/blog-img/2.jpg";
-import img3 from "../assets/images/blog-img/3.jpg";
-import img4 from "../assets/images/blog-img/4.jpg";
-import img5 from "../assets/images/blog-img/5.jpg";
-import img6 from "../assets/images/blog-img/6.jpg";
-import img7 from "../assets/images/blog-img/7.jpg";
+import { dataBlog } from "../data/blog";
 import { ScrollToTopOnMount } from "../helpers/routerup";
 
 export const BlogPage = () => {
-  const data = [
-    {
-      data: "16.02.2023",
-      img: img1,
-      title:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...",
-      link: "new-1",
-    },
-    {
-      data: "16.02.2023",
-      img: img2,
-      title:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...",
-      link: "new-1",
-    },
-    {
-      data: "16.02.2023",
-      img: img3,
-      title:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...",
-      link: "new-1",
-    },
-    {
-      data: "16.02.2023",
-      img: img4,
-      title:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...",
-      link: "new-1",
-    },
-    {
-      data: "16.02.2023",
-      img: img5,
-      title:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...",
-      link: "new-1",
-    },
-    {
-      data: "16.02.2023",
-      img: img6,
-      title:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...",
-      link: "new-1",
-    },
-    {
-      data: "16.02.2023",
-      img: img7,
-      title:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...",
-      link: "new-1",
-    },
-  ];
-
   return (
     <>
       <ScrollToTopOnMount />
-
       <section className="blog">
         <div className="container">
+          <div className="button top__mob-btn">Замовити проєкт</div>
           <div className="blog__wrapper">
             <h1 className="blog__title">Блог</h1>
             <h2 className="blog__text">
               Знайдiть кориснi поради та цiкавi iдеї у нашому блозi
             </h2>
             <div className="blog__items">
-              {data.map((item) => (
+              {dataBlog.map((item) => (
                 <div className="blog__item">
                   <div className="blog__item-data">{item.data}</div>
                   <div className="blog__item-image">

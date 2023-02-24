@@ -417,8 +417,8 @@ $accent: #e55733;
           }
         }
       }
-      &-th{
-        &:hover{
+      &-th {
+        &:hover {
           svg {
             path {
               fill: #343434;
@@ -595,6 +595,8 @@ $accent: #e55733;
   &__slide {
     &-area {
       min-height: 572px;
+      border: 3px solid $accent;
+      border-right: none;
       &-img {
         height: 100%;
         object-fit: cover;
@@ -838,6 +840,9 @@ $accent: #e55733;
 .questions {
   padding: 190px 0;
   background-color: #fff;
+  &-all {
+    background-color: #f6f4f1;
+  }
   &__title {
     margin-bottom: 78px;
   }
@@ -850,6 +855,12 @@ $accent: #e55733;
     border-bottom: 1px solid #000;
     &--active {
       max-height: 500px;
+    }
+    &-all {
+      max-height: 121px !important;
+      &--active {
+        max-height: 1000px !important;
+      }
     }
     &-line {
       display: flex;
@@ -897,6 +908,11 @@ $accent: #e55733;
       font-size: 24px;
       line-height: 90%;
       color: #353535;
+      &-all {
+        @extend %ral-600;
+        font-size: 60px;
+        line-height: 130%;
+      }
     }
     &-list {
       margin-top: 20px;
@@ -910,7 +926,16 @@ $accent: #e55733;
       &-box {
         margin-top: 20px;
       }
+      &-noml {
+        margin-left: 0;
+      }
     }
+  }
+  &__btn {
+    max-width: 196px;
+    width: 100%;
+    padding: 20px 10px;
+    margin-top: 40px;
   }
   &__grid {
     display: grid;
@@ -939,6 +964,13 @@ $accent: #e55733;
   &__link {
     margin-top: 78px;
     padding: 20px 51px;
+  }
+  &__allsubtitle {
+    margin-bottom: 25px;
+    @extend %ral-600;
+    font-size: 24px;
+    line-height: 100%;
+    color: #353535;
   }
 }
 .rates {
@@ -1777,6 +1809,7 @@ $accent: #e55733;
   &__item {
     display: flex;
     justify-content: space-between;
+    grid-gap: 25px;
     &-data {
       margin-right: 52px;
       margin-top: 11px;
@@ -1816,6 +1849,7 @@ $accent: #e55733;
       font-size: 16px;
       line-height: 150%;
       color: #353535;
+      margin-bottom: 15px;
     }
     &-link {
       margin-top: auto;
@@ -1942,6 +1976,9 @@ $accent: #e55733;
       color: #353535;
       margin-bottom: 27px;
       margin-top: 62px;
+      &-mob {
+        display: none;
+      }
     }
   }
   &__small {
@@ -3125,6 +3162,138 @@ $accent: #e55733;
         display: inline-block;
         width: 24px;
         height: 24px;
+      }
+    }
+  }
+}
+
+.contacts {
+  padding: 200px 0 85px;
+  .aside-popup__input {
+    background-color: #f6f4f1;
+  }
+  .aside-popup__input-textarea {
+    min-height: 131px;
+  }
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-gap: 35px;
+  }
+  &__title {
+    margin-bottom: 76px;
+  }
+  &__socials {
+    display: flex;
+    align-items: center;
+    margin-top: 31px;
+  }
+  &__social {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__block {
+    & + & {
+      margin-top: 31px;
+    }
+    &-subtitle {
+      @extend %ral-500;
+      font-size: 14px;
+      line-height: 16px;
+      color: #9a9a9a;
+      margin-bottom: 4px;
+    }
+    &-title {
+      @extend %ral-700;
+      font-size: 24px;
+      line-height: 150%;
+      color: #353535;
+    }
+  }
+  &__box {
+    &-form {
+      max-width: 636px;
+      width: 100%;
+      padding: 51px 110px 80px;
+      background: #f6f4f1;
+    }
+  }
+  &__form {
+    &-title {
+      @extend %ral-700;
+      font-size: 24px;
+      line-height: 150%;
+      color: #353535;
+      margin-bottom: 14px;
+    }
+  }
+  &__btn {
+    padding: 20px 10px;
+    max-width: 100%;
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+.allservices {
+  padding: 147px 0 128px;
+  .rates {
+    padding-top: 40px;
+    background-color: #fff;
+  }
+  &__img {
+    object-fit: contain;
+  }
+  &__top {
+    display: grid;
+    grid-template-columns: minmax(auto, 400px) minmax(auto, 856px);
+    align-items: center;
+    grid-gap: 25px;
+  }
+  &__button {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  &__btn {
+    max-width: 240px;
+    width: 100%;
+    padding: 20px 10px;
+    margin-top: 10px;
+  }
+  &__question {
+    &-box {
+      max-width: 634px;
+      width: 100%;
+    }
+    &-btn {
+      padding: 20px 10px;
+      max-width: 241px;
+      width: 100%;
+    }
+    &-inner {
+      display: flex;
+      justify-content: space-between;
+      grid-gap: 30px;
+      img{
+        object-fit: contain;
+      }
+    }
+    &-price {
+      @extend %ral-500;
+      font-size: 20px;
+      line-height: 150%;
+      color: #353535;
+      margin: 58px 0 25px;
+      span {
+        @extend %ral-700;
+        font-size: 20px;
+        line-height: 150%;
+        color: #353535;
+        margin-right: 17px;
       }
     }
   }
