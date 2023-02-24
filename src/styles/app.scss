@@ -499,6 +499,9 @@ $accent: #e55733;
       display: flex;
       justify-content: center;
       align-items: center;
+      &:focus{
+        color: #353535;
+      }
     }
   }
 }
