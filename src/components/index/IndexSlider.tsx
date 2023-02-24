@@ -50,7 +50,7 @@ export const IndexSlide = () => {
                 </svg>
               </div>
               <img
-                src={`/src/assets/images/indexslider-img/hover-${numSlideImg}.jpg`}
+                src={`../../assets/images/indexslider-img/hover-${numSlideImg}.jpg`}
                 alt=""
               />
             </div>
