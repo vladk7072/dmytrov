@@ -32,6 +32,8 @@ export const Top = () => {
             </a>
           </div>
         </div>
+      </div>
+      <div className="container top__container-image">
         <div className="top__image">
           <img src={bg} alt="" />
         </div>
