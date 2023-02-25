@@ -3,11 +3,12 @@ import { AllServicesItem } from "../components/allservices/AllservicesQuestion";
 import { RatesItem } from "../components/index/RatesItem";
 import { dataQuestionsBlock } from "../data/questions";
 import { dataTarifs } from "../data/rates";
+import { ScrollToTopOnMount } from "../helpers/routerup";
 
 export const AllServices = () => {
-
   return (
     <>
+      <ScrollToTopOnMount />
       <section className="allservices">
         <div className="container">
           <div className="button top__mob-btn">Замовити проєкт</div>

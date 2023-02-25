@@ -2727,6 +2727,7 @@ $accent: #e55733;
       font-size: 16px;
       line-height: 150%;
       color: #353535;
+      margin-top: 15px;
     }
     &-progress {
       display: flex;
@@ -2770,6 +2771,9 @@ $accent: #e55733;
       align-items: center;
       grid-gap: 24px;
       margin: 16px 0;
+      &-mb28{
+        margin-bottom: 16px;
+      }
     }
     &-forabout {
       display: flex;
@@ -2859,6 +2863,21 @@ $accent: #e55733;
         auto,
         480px
       );
+      &-mob{
+        &-delete{
+          display: none;
+          height: 100%;
+          width: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          svg{
+            path{
+              fill: #343434 !important;
+            }
+          }
+        }
+      }
     &-2 {
       grid-template-columns: minmax(auto, 700px) minmax(auto, 596px);
     }
@@ -2868,6 +2887,12 @@ $accent: #e55733;
       line-height: 150%;
       color: #353535;
       margin-bottom: 11px;
+      &-mob{
+        display: none;
+      }
+      &-dec{
+        display: none;
+      }
     }
     &-text {
       @extend %ral-500;
