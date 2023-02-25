@@ -1344,8 +1344,8 @@ $accent: #e55733;
       &:last-child {
         margin-bottom: 38px;
       }
-      &-city{
-        &::before{
+      &-city {
+        &::before {
           content: "";
           position: absolute;
           background-image: url("../assets/images/create-page-img/arrow.svg");
@@ -2475,6 +2475,9 @@ $accent: #e55733;
           margin-top: 16px;
         }
       }
+      &-imp {
+        margin-bottom: 16px;
+      }
     }
     &-grid {
       display: grid;
@@ -2771,7 +2774,7 @@ $accent: #e55733;
       align-items: center;
       grid-gap: 24px;
       margin: 16px 0;
-      &-mb28{
+      &-mb28 {
         margin-bottom: 16px;
       }
     }
@@ -2863,21 +2866,21 @@ $accent: #e55733;
         auto,
         480px
       );
-      &-mob{
-        &-delete{
-          display: none;
-          height: 100%;
-          width: 30px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          svg{
-            path{
-              fill: #343434 !important;
-            }
+    &-mob {
+      &-delete {
+        display: none;
+        height: 100%;
+        width: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        svg {
+          path {
+            fill: #343434 !important;
           }
         }
       }
+    }
     &-2 {
       grid-template-columns: minmax(auto, 700px) minmax(auto, 596px);
     }
@@ -2887,10 +2890,10 @@ $accent: #e55733;
       line-height: 150%;
       color: #353535;
       margin-bottom: 11px;
-      &-mob{
+      &-mob {
         display: none;
       }
-      &-dec{
+      &-dec {
         display: none;
       }
     }
@@ -3043,6 +3046,9 @@ $accent: #e55733;
     .aside-popup__label {
       top: 12px;
     }
+    &-mob {
+      display: none;
+    }
     &-top {
       border-bottom: 2px solid #000000;
       padding-bottom: 20px;
@@ -3124,6 +3130,27 @@ $accent: #e55733;
           border: 1px solid #dddddd;
           border-radius: 6px;
         }
+      }
+    }
+    &-choise {
+      max-height: 300px;
+      overflow-x: auto;
+      padding-right: 20px;
+      &::-webkit-scrollbar {
+        width: 10px; /* ширина всей полосы прокрутки */
+      }
+
+      &::-webkit-scrollbar-track {
+        margin-top: 3px;
+        border-radius: 10px;
+        background: #fff; /* цвет зоны отслеживания */
+        margin-bottom: 3px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: $accent; /* цвет бегунка */
+        border-radius: 10px; /* округлось бегунка */
+        border: 3px solid #fff; /* отступ вокруг бегунка */
       }
     }
   }
@@ -3231,6 +3258,91 @@ $accent: #e55733;
         display: inline-block;
         width: 24px;
         height: 24px;
+      }
+    }
+  }
+  &__cocon {
+    display: flex;
+    flex-direction: column;
+    & + & {
+      margin-top: 41px;
+    }
+    &-title {
+      @extend %ral-500;
+      font-size: 16px;
+      line-height: 150%;
+      color: #353535;
+      &-box {
+        display: flex;
+        align-items: center;
+        padding: 12px 0 17px;
+        border-top: 1px solid #ddd;
+        svg {
+          margin-right: 14px;
+        }
+      }
+    }
+    &-list {
+      display: flex;
+      flex-direction: column;
+    }
+    &-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid #dddddd;
+      border-radius: 15px;
+      height: 54px;
+      overflow: hidden;
+      transition: all 0.2s;
+      &--active {
+        background: #ffede3;
+        border: 1px solid #e55733;
+        border-radius: 15px;
+        .worksheet__cocon-item-check {
+          svg {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+      & + & {
+        margin-top: 6px;
+      }
+      &-img {
+        height: 54px;
+        object-fit: cover;
+      }
+      &-title {
+        margin-right: auto;
+        @extend %ral-700;
+        font-size: 13px;
+        line-height: 150%;
+        color: #353535;
+        margin-left: 14px;
+      }
+      &-check {
+        margin-right: 13px;
+        width: 24px;
+        height: 24px;
+        position: relative;
+        svg {
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.2s;
+        }
+        span {
+          position: absolute;
+          width: 24px;
+          height: 24px;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          border: 1px solid #ddd;
+          border-radius: 6px;
+          z-index: -1;
+        }
       }
     }
   }

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { CoconList } from "../components/worksheet/CoconList";
 import { WorksheetPicks } from "../components/WorksheetPicks";
 import {
   dataType,
@@ -11,6 +12,7 @@ import {
   dataTechnical,
   dataOptions,
   dataFlor,
+  dataCocon,
 } from "../data/worksheet";
 import { ScrollToTopOnMount } from "../helpers/routerup";
 
@@ -563,7 +565,17 @@ export const WorksheetPage = () => {
                     </div>
                   ))}
                 </div>
-                
+                <div className="worksheet__pick-mob">
+                  {dataCocon.map((item) => (
+                    <div className="worksheet__cocon" key={item.id}>
+                      <div className="worksheet__cocon-title-box">
+                        {item.svg}
+                        <h3 className="worksheet__cocon-title">{item.title}</h3>
+                      </div>
+                      <CoconList data={dataPicks} />
+                    </div>
+                  ))}
+                </div>
               </div>
               <div className="create__item-btns worksheet__btns worksheet__btns-nobt">
                 <div

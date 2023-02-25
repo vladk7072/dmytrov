@@ -111,7 +111,7 @@ export const Register = () => {
               </div>
               <div className="register__box">
                 <div className="register__box-title">Пароль</div>
-                <div className="aside-popup__form-item  register__box-item register__box-item-mb">
+                <div className="aside-popup__form-item  register__box-item register__box-item-mb  register__box-item-imp">
                   <input
                     name=""
                     type="text"
