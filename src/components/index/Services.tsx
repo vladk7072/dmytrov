@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Slider from "rsuite/Slider";
 import "rsuite/dist/rsuite.css";
 import { Rates } from "../Rates";
+import { Link } from "react-router-dom";
 
 export const Services = () => {
   const [openAside, setOpenAside] = useState(false);
@@ -81,9 +82,12 @@ export const Services = () => {
         <div className="container">
           <div className="services__wrapper">
             <div className="services__title-box">
-              <h3 className="services__title services__title-mob">
+              <Link
+                className="services__title services__title-mob"
+                to="../services/all"
+              >
                 Переглянути всi послуги
-              </h3>
+              </Link>
               <div className="services__title-img services__title-img-mob">
                 <svg
                   width="80"
@@ -98,10 +102,15 @@ export const Services = () => {
                   />
                 </svg>
               </div>
-              <div className="button services__title-btn">Переглянути</div>
-              <div className="button services__title-btn services__title-btn-mob">
+              <Link className="button services__title-btn" to="../services/all">
+                Переглянути
+              </Link>
+              <Link
+                className="button services__title-btn services__title-btn-mob"
+                to="../services/all"
+              >
                 Переглянути всi послуги
-              </div>
+              </Link>
             </div>
             <div className="services__inner">
               <div className="services__boxtext">
@@ -160,7 +169,11 @@ export const Services = () => {
           </div>
         </div>
       </section>
-      <div className={openAside ? "aside-popup aside-popup--active" : "aside-popup"}>
+      <div
+        className={
+          openAside ? "aside-popup aside-popup--active" : "aside-popup"
+        }
+      >
         <div className="aside-popup__content">
           <div
             className="aside-popup__close"
