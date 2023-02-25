@@ -54,15 +54,15 @@ export const ContactsPage = () => {
               </div>
               <div className="contacts__block">
                 <div className="contacts__block-subtitle">Email</div>
-                <div className="contacts__block-title">
+                <a className="contacts__block-title" href="mailto:dmytrovproject@gmail.com">
                   dmytrovproject@gmail.com
-                </div>
+                </a>
               </div>
               <div className="contacts__block">
                 <div className="contacts__block-subtitle">
                   Телефон | Viber | Telegram
                 </div>
-                <div className="contacts__block-title">+38 (099) 252 13 29</div>
+                <a className="contacts__block-title" href="0992521329">+38 (099) 252 13 29</a>
               </div>
               <div className="contacts__socials">
                 <div className="contacts__social">

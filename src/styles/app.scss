@@ -304,6 +304,20 @@ $accent: #e55733;
       width: 36px;
       border-radius: 50%;
       border: 1px solid #545454;
+      transition: border 0.2s;
+      svg {
+        path {
+          transition: fill 0.2s;
+        }
+      }
+      &:hover {
+        border: 1px solid $accent;
+        svg {
+          path {
+            fill: $accent;
+          }
+        }
+      }
       & + & {
         margin-left: 6px;
       }
@@ -3210,6 +3224,19 @@ $accent: #e55733;
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    svg {
+      path {
+        transition: fill 0.2s;
+      }
+    }
+    &:hover {
+      svg {
+        path {
+          fill: $accent;
+        }
+      }
+    }
   }
   &__block {
     & + & {
@@ -3227,6 +3254,13 @@ $accent: #e55733;
       font-size: 24px;
       line-height: 150%;
       color: #353535;
+      transition: color 0.2s;
+      &:hover {
+        color: $accent;
+      }
+      &:focus {
+        color: #353535;
+      }
     }
   }
   &__box {
