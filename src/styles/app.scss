@@ -1344,6 +1344,21 @@ $accent: #e55733;
       &:last-child {
         margin-bottom: 38px;
       }
+      &-city{
+        &::before{
+          content: "";
+          position: absolute;
+          background-image: url("../assets/images/create-page-img/arrow.svg");
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center center;
+          top: 50%;
+          transform: translateY(-50%);
+          right: 17px;
+          width: 15px;
+          height: 8px;
+        }
+      }
     }
     &-list {
       position: absolute;

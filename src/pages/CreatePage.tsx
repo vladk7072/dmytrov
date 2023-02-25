@@ -390,6 +390,7 @@ export const CreatePage = () => {
 
       <section className="create">
         <div className="container">
+          <div className="button top__mob-btn">Замовити проєкт</div>
           <div className="create__wrapper">
             <h1 className="create__title">Створення заявки</h1>
 
@@ -579,7 +580,7 @@ export const CreatePage = () => {
                       Вкажіть адресу
                     </div>
                     <div className="create__item-content-box">
-                      <div className="aside-popup__form-item">
+                      <div className="aside-popup__form-item aside-popup__form-item-city">
                         <input
                           name=""
                           className="aside-popup__input aside-popup__input-city"
