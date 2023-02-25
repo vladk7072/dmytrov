@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import bg1 from "../assets/images/services-img/top-bg.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { Navigation } from "swiper";
+import { Autoplay, Navigation } from "swiper";
 import "swiper/css/navigation";
 import { ScrollToTopOnMount } from "../helpers/routerup";
 import { dataSevicesSlide } from "../data/servicespage";
@@ -30,6 +30,7 @@ export const ServicesPage = () => {
       <ScrollToTopOnMount />
       <section className="servicespage">
         <div className="container">
+          <div className="button top__mob-btn">Замовити проєкт</div>
           <div className="servicespage__wrapper">
             <div className="servicespage__nav">
               {dataNav.map((item, idx) => (
@@ -84,12 +85,16 @@ export const ServicesPage = () => {
           <div className="container servicespage__slider-container">
             <div className="servicespage__slider-inner">
               <Swiper
-                modules={[Navigation]}
+                modules={[Autoplay, Navigation]}
                 navigation={{
                   prevEl: swiperNavPrevRef.current,
                   nextEl: swiperNavNextRef.current,
                 }}
                 speed={500}
+                autoplay={{
+                  delay: 7000,
+                  disableOnInteraction: false,
+                }}
                 slidesPerView={1}
                 onInit={(swiper: any) => {
                   swiper.params.navigation.prevEl = swiperNavPrevRef.current;
@@ -177,7 +182,7 @@ export const ServicesPage = () => {
         </div>
       </section>
 
-      {/* <section className="compose">
+      <section className="compose">
         <div className="container">
           <div className="compose__wrapper">
             <h3 className="compose__title">Порiвняння тарифiв</h3>
@@ -635,7 +640,7 @@ export const ServicesPage = () => {
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
     </>
   );
 };

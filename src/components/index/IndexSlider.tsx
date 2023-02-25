@@ -92,7 +92,7 @@ export const IndexSlide = () => {
                 nextEl: swiperNavNextRef.current,
               }}
               autoplay={{
-                delay: 700000,
+                delay: 7000,
                 disableOnInteraction: false,
               }}
               speed={500}

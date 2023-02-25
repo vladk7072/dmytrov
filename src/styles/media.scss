@@ -37,6 +37,29 @@ $accent: #e55733;
       }
     }
   }
+  .servicespage {
+    &__slider {
+      &::before {
+        right: 0;
+      }
+      &-nav {
+        margin-left: 130px;
+        max-width: 290px;
+      }
+    }
+    &__slide {
+      &-img {
+        height: 450px;
+        img {
+          object-fit: cover;
+          height: 100%;
+        }
+      }
+      &-content {
+        margin-left: 130px;
+      }
+    }
+  }
 }
 @media (max-width: 1296px) {
   .indexslide {
@@ -48,6 +71,19 @@ $accent: #e55733;
   .services {
     &__inner {
       grid-gap: 90px;
+    }
+  }
+  .servicespage {
+    &__slider {
+      &-nav {
+        margin-left: 15px;
+      }
+    }
+    &__slide {
+      margin-right: 15px;
+      &-content {
+        margin-left: 15px;
+      }
     }
   }
 }
@@ -224,6 +260,54 @@ $accent: #e55733;
           justify-content: space-between;
           align-items: center;
         }
+      }
+    }
+  }
+  .servicespage {
+    &__top {
+      flex-direction: column;
+      &-title {
+        margin-right: 0;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      &-subtitle {
+        text-align: center;
+        margin-top: 8px;
+      }
+      &-text {
+        margin-left: 0;
+        text-align: center;
+        margin-top: 43px;
+      }
+      &-box {
+        margin: 0 auto;
+      }
+      &-price {
+        justify-content: center;
+      }
+      &-btn {
+        margin-top: 17px;
+      }
+    }
+    &__bg {
+      img {
+        object-fit: cover;
+      }
+    }
+    &__slide {
+      flex-direction: column;
+      align-items: flex-start;
+      margin: 0 15px;
+      padding-bottom: 135px;
+      &-title {
+        padding-top: 44px;
+      }
+      &-text {
+        margin-bottom: 0;
+      }
+      &-content {
+        margin-left: 0;
       }
     }
   }
@@ -606,6 +690,42 @@ $accent: #e55733;
       padding: 34px 24px 72px;
     }
   }
+  .servicespage {
+    &__nav {
+      justify-content: space-evenly;
+      &-link {
+        font-size: 14px;
+        line-height: 100%;
+        padding: 0 10px 16px;
+      }
+    }
+    &__slider {
+      &-nav {
+        margin: 0 auto;
+      }
+    }
+    &__slide {
+      grid-gap: 30px;
+      min-height: 670px;
+      &-img {
+        height: 350px;
+      }
+    }
+  }
+  .compose {
+    &__top {
+      grid-template-columns:
+        minmax(185px, 809px) minmax(auto, 161px) minmax(auto, 161px)
+        minmax(auto, 161px);
+    }
+    &__content {
+      &-item {
+        padding-left: 0;
+        font-size: 13px;
+        line-height: 15px;
+      }
+    }
+  }
 }
 @media (max-width: 610px) {
   .rates {
@@ -633,8 +753,8 @@ $accent: #e55733;
       font-size: 20px;
       line-height: 150%;
     }
-    &__data{
-      &-btn{
+    &__data {
+      &-btn {
         margin: 51px 0 36px;
       }
     }
@@ -1011,6 +1131,87 @@ $accent: #e55733;
       max-width: 100%;
     }
   }
+  .servicespage {
+    padding: 68px 0 47px;
+    &__top {
+      padding: 36px 0 41px;
+      &-title {
+        font-size: 28px;
+        line-height: 120%;
+        margin-bottom: 0;
+      }
+      &-subtitle {
+        font-size: 12px;
+        line-height: 14px;
+      }
+      &-text {
+        font-size: 13px;
+        line-height: 140%;
+      }
+    }
+    &__slide {
+      min-height: 512px;
+      &-img {
+        height: 210px;
+      }
+      &-title {
+        font-size: 20px;
+        line-height: 130%;
+        margin-bottom: 15px;
+      }
+      &-text {
+        font-size: 13px;
+        line-height: 150%;
+        max-height: 180px;
+      }
+      &-aside {
+        padding: 20px 10px 20px;
+        min-width: 0;
+        white-space: normal;
+        max-width: 150px;
+      }
+    }
+    &__coun {
+      &-all {
+        font-size: 20px;
+        line-height: 150%;
+      }
+      &-target {
+        font-size: 20px;
+        line-height: 150%;
+      }
+    }
+  }
+  .compose {
+    padding-bottom: 62px;
+    &__title {
+      margin-bottom: 30px;
+      font-size: 22px;
+      line-height: 130%;
+      margin-top: 53px;
+    }
+    &__top {
+      grid-template-columns:
+        minmax(130px, 809px) minmax(auto, 161px) minmax(auto, 161px)
+        minmax(auto, 161px);
+      padding-bottom: 14px;
+      &-title {
+        font-size: 12px;
+        line-height: 110%;
+        &:first-child {
+          color: #fff;
+        }
+      }
+    }
+    &__content {
+      &-check {
+        svg {
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+  }
 }
 @media (max-width: 440px) {
   .header {
@@ -1130,6 +1331,13 @@ $accent: #e55733;
       grid-gap: 40px;
     }
   }
+  .servicespage {
+    &__slide {
+      &-aside {
+        max-width: 110px;
+      }
+    }
+  }
 }
 @media (max-width: 345px) {
   .rates {
@@ -1147,6 +1355,14 @@ $accent: #e55733;
     &__inner {
       padding-left: 17px;
       padding-right: 17px;
+    }
+  }
+  .compose {
+    &__top {
+      grid-template-columns:
+        minmax(100px, 809px) minmax(auto, 161px) minmax(auto, 161px)
+        minmax(auto, 161px);
+      padding-bottom: 14px;
     }
   }
 }

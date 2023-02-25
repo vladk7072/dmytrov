@@ -627,6 +627,7 @@ $accent: #e55733;
       color: #fff;
       max-height: 350px;
       overflow-y: auto;
+      margin-right: 12px;
       &::-webkit-scrollbar {
         width: 10px; /* ширина всей полосы прокрутки */
       }
@@ -1522,6 +1523,7 @@ $accent: #e55733;
       padding: 0 35px 30px;
       border-bottom: 2px solid transparent;
       transition: all 0.2s;
+      text-align: center;
       &--active {
         color: $accent;
         border-bottom: 2px solid $accent;
@@ -1584,6 +1586,7 @@ $accent: #e55733;
       color: #353535;
       max-width: 416px;
       width: 100%;
+      margin-left: 25px;
     }
   }
   &__bg {
@@ -1629,6 +1632,7 @@ $accent: #e55733;
     grid-gap: 58px;
     min-height: 800px;
     &-img {
+      background-color: #fff;
       max-width: 956px;
       height: 700px;
       background-size: contain;
@@ -1679,6 +1683,7 @@ $accent: #e55733;
       margin-bottom: 130px;
       max-height: 280px;
       overflow-y: auto;
+      margin-right: 12px;
       &::-webkit-scrollbar {
         width: 10px; /* ширина всей полосы прокрутки */
       }
