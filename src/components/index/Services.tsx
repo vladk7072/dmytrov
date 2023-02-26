@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import Slider from "rsuite/Slider";
-import "rsuite/dist/rsuite.css";
+// import Slider from "rsuite/Slider";
+import "rsuite/dist/rsuite.min.css";
 import { Rates } from "../Rates";
 import { Link } from "react-router-dom";
+import { Slider } from "@mui/material";
 
 export const Services = () => {
   const [openAside, setOpenAside] = useState(false);
@@ -80,7 +81,6 @@ export const Services = () => {
 
   const handleInput = (event: any) => {
     const inputValue = event.target.value;
-
     if (!isNaN(inputValue)) {
       setValueRage(inputValue);
     }
@@ -92,9 +92,7 @@ export const Services = () => {
         <div className="container">
           <div className="services__wrapper">
             <div className="services__title-box">
-              <div
-                className="services__title services__title-mob"
-              >
+              <div className="services__title services__title-mob">
                 Переглянути всi послуги
               </div>
               <div className="services__title-img services__title-img-mob">
@@ -135,39 +133,31 @@ export const Services = () => {
               <div className="services__box">
                 <div className="services__range-title">Вибір площі: </div>
                 <div className="create__item-content-box">
-                      <div className="services__range-slider">
-                        <div className="services__range-slider-title">5</div>
-                        <Slider
-                          progress
-                          min={0}
-                          max={175}
-                          value={valueRage}
-                          onChange={(value) => {
-                            setValueRage(value);
-                          }}
-                        />
-                        <div className="services__range-slider-title">
-                          175+ м2
-                        </div>
-                      </div>
-                      <div className="aside-popup__form-item">
-                        <input
-                          name=""
-                          type="text"
-                          className="aside-popup__input"
-                          id="form-rage"
-                          placeholder="Email"
-                          value={valueRage}
-                          onChange={handleInput}
-                        ></input>
-                        <label
-                          className="aside-popup__label"
-                          htmlFor="form-rage"
-                        >
-                          Площа об'єкту
-                        </label>
-                      </div>
-                    </div>
+                  <div className="services__range-slider">
+                    <div className="services__range-slider-title">5</div>
+                    <Slider
+                      valueLabelDisplay="on"
+                      aria-label="Volume"
+                      value={valueRage}
+                      onChange={(e) => handleInput(e)}
+                    />
+                    <div className="services__range-slider-title">175+ м2</div>
+                  </div>
+                  <div className="aside-popup__form-item">
+                    <input
+                      name=""
+                      type="text"
+                      className="aside-popup__input"
+                      id="form-rage"
+                      placeholder="Email"
+                      value={valueRage}
+                      onChange={handleInput}
+                    ></input>
+                    <label className="aside-popup__label" htmlFor="form-rage">
+                      Площа об'єкту
+                    </label>
+                  </div>
+                </div>
                 <div className="services__range-title services__range-title-mb">
                   Вибір тарифа проєкту:
                 </div>

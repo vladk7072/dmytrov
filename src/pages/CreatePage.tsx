@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Slider } from "rsuite";
 import { Rates } from "../components/Rates";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import { Link } from "react-router-dom";
 import { ScrollToTopOnMount } from "../helpers/routerup";
+import Slider from "@mui/material/Slider";
 
 export const CreatePage = () => {
   const dataHomes = [
@@ -465,13 +465,10 @@ export const CreatePage = () => {
                       <div className="services__range-slider">
                         <div className="services__range-slider-title">5</div>
                         <Slider
-                          progress
-                          min={0}
-                          max={175}
+                          valueLabelDisplay="on"
+                          aria-label="Volume"
                           value={valueRage}
-                          onChange={(value) => {
-                            setValueRage(value);
-                          }}
+                          onChange={(e) => handleInput(e)}
                         />
                         <div className="services__range-slider-title">
                           175+ м2
