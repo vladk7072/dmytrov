@@ -469,6 +469,24 @@ export const CreatePage = () => {
                           aria-label="Volume"
                           value={valueRage}
                           onChange={(e) => handleInput(e)}
+                          sx={{
+                            color: "#E55733",
+                            "& .MuiSlider-thumb": {
+                              "&:hover, &.Mui-focusVisible": {
+                                boxShadow: "none",
+                              },
+                              "&.Mui-active": {
+                                boxShadow: "none",
+                              },
+                            },
+                            "& .MuiSlider-valueLabelOpen": {
+                              background: "#E55733",
+                              borderRadius: "4px",
+                              padding: "1px 7px",
+                              fontSize: "16px",
+                              lineHeight: "150%",
+                            },
+                          }}
                         />
                         <div className="services__range-slider-title">
                           175+ м2
