@@ -1,5 +1,6 @@
 import { FC, useState } from "react";
 import { CoconItem } from "./CoconItem";
+import pick7 from "../../assets/images/worksheet-img/pick7.jpg";
 
 type PropsType = {
   data: {
@@ -7,7 +8,7 @@ type PropsType = {
     img: any;
     title: string;
   }[];
-  forinput: string
+  forinput: string;
 };
 
 export const CoconList: FC<PropsType> = ({ data, forinput }) => {
@@ -16,19 +17,22 @@ export const CoconList: FC<PropsType> = ({ data, forinput }) => {
       {data.map((item) => (
         <CoconItem item={item} />
       ))}
-      <div className="aside-popup__form-item aside-popup__form-item-95">
-        <input
-          name=""
-          className="aside-popup__input"
-          id={forinput}
-          placeholder="Матерiал"
-        ></input>
-        <label
-          className="aside-popup__label aside-popup__label-lh95"
-          htmlFor={forinput}
-        >
-          Матеріал /Коментар
-        </label>
+      <div className="aside-popup__form-box">
+          <img className="aside-popup__form-img" src={pick7} alt="" />
+        <div className="aside-popup__form-item aside-popup__form-item-95">
+          <input
+            name=""
+            className="aside-popup__input"
+            id={forinput}
+            placeholder="Матерiал"
+          ></input>
+          <label
+            className="aside-popup__label aside-popup__label-lh95"
+            htmlFor={forinput}
+          >
+            Матеріал /Коментар
+          </label>
+        </div>
       </div>
     </div>
   );

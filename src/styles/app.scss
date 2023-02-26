@@ -1388,6 +1388,15 @@ $accent: #e55733;
         }
       }
     }
+    &-box{
+      display: flex;
+      align-items: center;
+    }
+    &-img{
+      height: 50px;
+      width: 50px;
+      margin-top: 6px;
+    }
   }
   &__input {
     padding: 22px 23px 10px;
