@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { Link } from "react-router-dom";
 
 type PropsType = {
   item: {
@@ -6,6 +7,7 @@ type PropsType = {
     subtitle: string;
     price: string;
     text: string;
+    link: string;
   };
 };
 
@@ -21,9 +23,9 @@ export const RatesItem: FC<PropsType> = (props) => {
           {props.item.price}
           <span>грн/м2</span>
         </div>
-        <a className="rates__link" href="#">
+        <Link className="rates__link" to={props.item.link}>
           Переглянути зміст
-        </a>
+        </Link>
         <p className="rates__text">{props.item.text}</p>
         <p className="rates__text rates__text-mob">
           {props.item.text}

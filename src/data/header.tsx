@@ -9,7 +9,7 @@ export const dataMenu = [
   },
   {
     item: "Послуги",
-    link: "services",
+    link: "services/all",
   },
   {
     item: "Блог",

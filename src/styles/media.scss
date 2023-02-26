@@ -279,8 +279,8 @@ $accent: #e55733;
       }
     }
   }
-  .aside-popup{
-    &__title{
+  .aside-popup {
+    &__title {
       margin-top: 0;
     }
   }
@@ -909,6 +909,17 @@ $accent: #e55733;
       }
     }
   }
+  .create{
+    &__item{
+      &-btns{
+        flex-direction: column-reverse;
+      }
+      &-btn{
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+  }
 }
 @media (max-width: 610px) {
   .rates {
@@ -1491,6 +1502,12 @@ $accent: #e55733;
       padding: 41px 0 92px;
       &-title {
         display: none;
+        &-mob {
+          display: block;
+          font-size: 30px;
+          line-height: 120%;
+          margin-bottom: 25px;
+        }
       }
       &-subtitle {
         font-size: 20px;

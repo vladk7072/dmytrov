@@ -465,6 +465,8 @@ export const CreatePage = () => {
                       <div className="services__range-slider">
                         <div className="services__range-slider-title">5</div>
                         <Slider
+                          min={0}
+                          max={175}
                           valueLabelDisplay="on"
                           aria-label="Volume"
                           value={valueRage}

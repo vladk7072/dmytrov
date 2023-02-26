@@ -104,7 +104,7 @@ export const Register = () => {
                       placeholder="Skype"
                     ></input>
                     <label className="aside-popup__label" htmlFor="form-skype">
-                      Skype<span>*</span>
+                      Skype
                     </label>
                   </div>
                 </div>

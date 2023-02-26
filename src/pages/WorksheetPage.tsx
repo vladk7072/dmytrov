@@ -326,6 +326,9 @@ export const WorksheetPage = () => {
               <div className="title worksheet__item-title">
                 Як часто у вас бувають гості?
               </div>
+              <div className="title worksheet__item-title title worksheet__item-title-mob">
+                Як часто у вас бувають гості?
+              </div>
               <div className="aside-popup__form-item">
                 <textarea
                   name=""

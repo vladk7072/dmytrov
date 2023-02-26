@@ -137,6 +137,8 @@ export const Services = () => {
                       valueLabelDisplay="on"
                       aria-label="Volume"
                       value={valueRage}
+                      min={0}
+                      max={175}
                       onChange={(e) => handleInput(e)}
                       sx={{
                         color: "#E55733",
