@@ -1,6 +1,4 @@
 import { useState, useEffect } from "react";
-// import Slider from "rsuite/Slider";
-import "rsuite/dist/rsuite.min.css";
 import { Rates } from "../Rates";
 import { Link } from "react-router-dom";
 import { Slider } from "@mui/material";
