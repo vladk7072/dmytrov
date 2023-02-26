@@ -279,6 +279,11 @@ $accent: #e55733;
       }
     }
   }
+  .aside-popup{
+    &__title{
+      margin-top: 0;
+    }
+  }
 }
 @media (max-width: 1070px) {
   .blognew {
@@ -837,7 +842,7 @@ $accent: #e55733;
         }
       }
       &-btns {
-        flex-direction: column-reverse;
+        flex-direction: column-;
         align-items: flex-start;
       }
     }
@@ -1769,3 +1774,14 @@ $accent: #e55733;
     }
   }
 }
+// sx={{
+//   color: "#E55733",
+//   "& .MuiSlider-thumb": {
+//     "&:hover, &.Mui-focusVisible": {
+//       boxShadow: "none",
+//     },
+//     "&.Mui-active": {
+//       boxShadow: "none",
+//     },
+//   },
+// }}
