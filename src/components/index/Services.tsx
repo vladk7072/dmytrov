@@ -138,6 +138,17 @@ export const Services = () => {
                       aria-label="Volume"
                       value={valueRage}
                       onChange={(e) => handleInput(e)}
+                      sx={{
+                        color: "#E55733",
+                        "& .MuiSlider-thumb": {
+                          "&:hover, &.Mui-focusVisible": {
+                            boxShadow: "none",
+                          },
+                          "&.Mui-active": {
+                            boxShadow: "none",
+                          },
+                        },
+                      }}
                     />
                     <div className="services__range-slider-title">175+ м2</div>
                   </div>
