@@ -602,6 +602,11 @@ $accent: #e55733;
     }
   }
   .indexslide {
+    &__wrapper {
+      .swiper {
+        background-color: $accent;
+      }
+    }
     &__mob {
       &-img {
         display: flex;
@@ -885,6 +890,9 @@ $accent: #e55733;
       }
       &-col {
         &-rdec {
+          &:first-child{
+            margin-right: 0;
+          }
           &::after {
             display: none;
           }
@@ -904,8 +912,8 @@ $accent: #e55733;
       }
     }
     &__cocon {
-      &-item{
-        &:nth-child(7){
+      &-item {
+        &:nth-child(7) {
           display: none;
         }
       }
@@ -918,14 +926,22 @@ $accent: #e55733;
           margin-top: 6px;
           width: 100%;
           max-width: 100%;
-          .aside-popup__label{
+          .aside-popup__label {
             left: 14px;
           }
-          input{
+          input {
             border-radius: 0 15px 15px 0;
             border-left: none;
           }
         }
+      }
+      &-img {
+        width: 53px;
+        object-fit: cover;
+        height: 50px;
+        border: 1px solid #ddd;
+        border-right: none;
+        border-radius: 15px 0 0 15px;
       }
     }
     &__label {
@@ -1190,6 +1206,10 @@ $accent: #e55733;
         & + & {
           margin-top: 10px;
         }
+      }
+      &-img {
+        height: 47px;
+        width: 57px;
       }
     }
     &__label {
@@ -1804,6 +1824,13 @@ $accent: #e55733;
       min-height: 600px;
     }
   }
+  .aside-popup {
+    &__form {
+      &-img {
+        width: 58px;
+      }
+    }
+  }
 }
 @media (max-width: 345px) {
   .rates {
@@ -1829,6 +1856,13 @@ $accent: #e55733;
         minmax(100px, 809px) minmax(auto, 161px) minmax(auto, 161px)
         minmax(auto, 161px);
       padding-bottom: 14px;
+    }
+  }
+  .aside-popup {
+    &__form {
+      &-img {
+        width: 60px;
+      }
     }
   }
 }

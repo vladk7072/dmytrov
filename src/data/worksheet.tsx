@@ -4,7 +4,7 @@ import pick3 from "../assets/images/worksheet-img/pick3.jpg";
 import pick4 from "../assets/images/worksheet-img/pick4.jpg";
 import pick5 from "../assets/images/worksheet-img/pick5.jpg";
 import pick6 from "../assets/images/worksheet-img/pick6.jpg";
-import pick7 from "../assets/images/worksheet-img/pick7.jpg";
+import pick7 from "../assets/images/worksheet-img/pick7.svg";
 import option1 from "../assets/images/worksheet-img/option1.jpg";
 import option2 from "../assets/images/worksheet-img/option2.jpg";
 import option3 from "../assets/images/worksheet-img/option3.jpg";

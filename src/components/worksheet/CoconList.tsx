@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 import { CoconItem } from "./CoconItem";
-import pick7 from "../../assets/images/worksheet-img/pick7.jpg";
+import pick8 from "../../assets/images/worksheet-img/pick8.svg";
 
 type PropsType = {
   data: {
@@ -18,7 +18,7 @@ export const CoconList: FC<PropsType> = ({ data, forinput }) => {
         <CoconItem item={item} />
       ))}
       <div className="aside-popup__form-box">
-          <img className="aside-popup__form-img" src={pick7} alt="" />
+        <img className="aside-popup__form-img" src={pick8} alt="" />
         <div className="aside-popup__form-item aside-popup__form-item-95">
           <input
             name=""
