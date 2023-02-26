@@ -552,10 +552,10 @@ export const WorksheetPage = () => {
                             placeholder="Матерiал"
                           ></input>
                           <label
-                            className="aside-popup__label"
+                            className="aside-popup__label aside-popup__label-lh95"
                             htmlFor={item.inputfor}
                           >
-                            Матерiал
+                            Матеріал /Коментар
                           </label>
                         </div>
                       </div>
@@ -569,7 +569,7 @@ export const WorksheetPage = () => {
                         {item.svg}
                         <h3 className="worksheet__cocon-title">{item.title}</h3>
                       </div>
-                      <CoconList data={dataPicks} />
+                      <CoconList data={dataPicks} forinput={item.title} />
                     </div>
                   ))}
                 </div>

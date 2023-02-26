@@ -73,11 +73,6 @@ export const dataPicks = [
     title: "Лінолеум",
     img: pick6,
   },
-  {
-    id: 6,
-    title: "Iнший варіант",
-    img: pick7,
-  },
 ];
 export const dataSex = [
   {

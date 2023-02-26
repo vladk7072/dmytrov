@@ -815,6 +815,11 @@ $accent: #e55733;
     &__slide {
       grid-gap: 30px;
     }
+    &__bg{
+      img{
+        height: 350px;
+      }
+    }
   }
   .compose {
     &__top {
@@ -896,6 +901,21 @@ $accent: #e55733;
       &-mob {
         display: flex;
         flex-direction: column;
+      }
+    }
+  }
+  .aside-popup{
+    &__form{
+      &-item{
+        &-95{
+          margin-top: 6px;
+        }
+      }
+    }
+    &__label{
+      &-lh95{
+        font-size: 14px;
+        line-height: 170%;
       }
     }
   }
@@ -1722,6 +1742,11 @@ $accent: #e55733;
     &__slide {
       &-aside {
         max-width: 110px;
+      }
+    }
+    &__bg{
+      img{
+        height: 250px;
       }
     }
   }
