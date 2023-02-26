@@ -29,29 +29,29 @@ export const IndexSlide = () => {
   const dataMobImg = [
     {
       id: 0,
-      img: hover1
+      img: hover1,
     },
     {
       id: 1,
-      img: hover2
+      img: hover2,
     },
     {
       id: 2,
-      img: hover3
+      img: hover3,
     },
     {
       id: 3,
-      img: hover4
+      img: hover4,
     },
     {
       id: 4,
-      img: hover5
+      img: hover5,
     },
     {
       id: 5,
-      img: hover6
+      img: hover6,
     },
-  ]
+  ];
 
   return (
     <>
@@ -76,10 +76,7 @@ export const IndexSlide = () => {
                   />
                 </svg>
               </div>
-              <img
-                src={numSlideImg}
-                alt=""
-              />
+              <img src={numSlideImg} alt="" />
             </div>
           </div>
         )}
@@ -92,7 +89,7 @@ export const IndexSlide = () => {
                 nextEl: swiperNavNextRef.current,
               }}
               autoplay={{
-                delay: 7000,
+                delay: 15000,
                 disableOnInteraction: false,
               }}
               speed={500}
@@ -131,6 +128,9 @@ export const IndexSlide = () => {
                     </div>
                   </div>
                   <div className="indexslide__slide-box">
+                    <div className="indexslide__slide-subtitle">
+                      Наші переваги
+                    </div>
                     <div className="indexslide__slide-title">Наші переваги</div>
                     <div className="indexslide__slide-text">
                       Детальні схематичні ілюстрації всіх необхідних технічних
@@ -182,6 +182,9 @@ export const IndexSlide = () => {
                     </div>
                   </div>
                   <div className="indexslide__slide-box">
+                    <div className="indexslide__slide-subtitle">
+                      Наші переваги
+                    </div>
                     <div className="indexslide__slide-title">
                       Наповнення електрощита
                     </div>
@@ -224,6 +227,9 @@ export const IndexSlide = () => {
                     </div>
                   </div>
                   <div className="indexslide__slide-box">
+                    <div className="indexslide__slide-subtitle">
+                      Наші переваги
+                    </div>
                     <div className="indexslide__slide-title">
                       Схема водорозбірного вузла
                     </div>
@@ -261,6 +267,9 @@ export const IndexSlide = () => {
                     />
                   </div>
                   <div className="indexslide__slide-box">
+                    <div className="indexslide__slide-subtitle">
+                      Наші переваги
+                    </div>
                     <div className="indexslide__slide-title">
                       Онлайн анкетування текст
                     </div>

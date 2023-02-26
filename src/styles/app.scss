@@ -464,9 +464,24 @@ $accent: #e55733;
       border: 1px solid #ede8e1;
       border-radius: 50%;
       cursor: pointer;
+      transition: border 0.2s;
       a {
-        &:hover {
-          color: #000;
+        transition: color 0.2s;
+      }
+      svg {
+        path {
+          transition: fill 0.2s;
+        }
+      }
+      &:hover {
+        border: 1px solid $accent;
+        a {
+          color: $accent;
+        }
+        svg {
+          path {
+            fill: $accent;
+          }
         }
       }
       & + & {
@@ -573,7 +588,7 @@ $accent: #e55733;
     color: #353535;
   }
   &__text {
-    max-width: 416px;
+    max-width: 645px;
     width: 100%;
     @extend %ral-500;
     font-size: 16px;
@@ -590,6 +605,14 @@ $accent: #e55733;
     line-height: 16px;
     color: #9a9a9a;
     text-decoration: underline;
+    transition: color 0.2s;
+    &:hover {
+      color: $accent;
+    }
+    &:focus {
+      color: #9a9a9a;
+      text-decoration: underline;
+    }
   }
 }
 .indexslide {
@@ -599,6 +622,11 @@ $accent: #e55733;
       path {
         fill-opacity: 0.4;
       }
+    }
+  }
+  &__wrapper{
+    .swiper{
+      background-color: $accent;
     }
   }
   &__mob {
@@ -641,7 +669,7 @@ $accent: #e55733;
       color: #fff;
       max-height: 350px;
       overflow-y: auto;
-      margin-right: 12px;
+      padding-right: 12px;
       &::-webkit-scrollbar {
         width: 10px; /* ширина всей полосы прокрутки */
       }
@@ -657,8 +685,13 @@ $accent: #e55733;
         border: 3px solid #fff; /* отступ вокруг бегунка */
       }
     }
-  }
-  &__slide {
+    &-subtitle {
+      @extend %ral-600;
+      font-size: 30px;
+      line-height: 19px;
+      color: #fff;
+      margin-bottom: 30px;
+    }
     &-area {
       position: relative;
       &-mob {
@@ -853,7 +886,10 @@ $accent: #e55733;
   }
 }
 .questions {
-  padding: 190px 0;
+  padding: 115px 0 190px;
+  &-page{
+    padding-top: 188px;
+  }
   background-color: #fff;
   &-all {
     background-color: #f6f4f1;
@@ -1658,47 +1694,15 @@ $accent: #e55733;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    grid-gap: 58px;
+    grid-gap: 70px;
     min-height: 800px;
-    &-img {
-      background-color: #fff;
-      max-width: 956px;
-      height: 700px;
-      background-size: contain;
-      width: 100%;
-      position: relative;
-      border: 3px solid #353535;
-      border-radius: 0 20px 20px 0;
-    }
-    &-aside {
-      position: absolute;
-      top: -3px;
-      right: -3px;
-      bottom: -3px;
-      background-color: #c7dbb9;
-      padding: 55px 10px 80px;
-      min-width: 203px;
-      border-radius: 20px;
-      display: flex;
-      flex-direction: column;
-      &-title {
-        @extend %ral-700;
-        font-size: 13px;
-        line-height: 150%;
-        color: #000;
-        &--down {
-          margin-top: auto;
-        }
-      }
-    }
-    &-content {
-      max-width: 425px;
-      width: 100%;
-      margin-left: 245px;
+    &-img{
+      border-radius: 0 13px 13px 0;
+      overflow: hidden;
     }
     &-title {
       @extend %ral-600;
-      font-size: 60px;
+      font-size: 58px;
       line-height: 130%;
       color: #353535;
       margin-bottom: 30px;
@@ -1723,10 +1727,14 @@ $accent: #e55733;
       }
 
       &::-webkit-scrollbar-thumb {
-        background-color: #c7dbb9; /* цвет бегунка */
+        background-color: $accent; /* цвет бегунка */
         border-radius: 10px; /* округлось бегунка */
         border: 3px solid #fff; /* отступ вокруг бегунка */
       }
+    }
+    &-content{
+      max-width: 505px;
+      width: 100%;
     }
   }
   &__coun {
@@ -2829,7 +2837,7 @@ $accent: #e55733;
       }
     }
     &-textarea {
-      max-width: 1076px;
+      max-width: 100%;
       width: 100%;
     }
   }
@@ -2871,7 +2879,6 @@ $accent: #e55733;
         display: none;
         height: 100%;
         width: 30px;
-        display: flex;
         align-items: center;
         justify-content: center;
         svg {
@@ -3440,7 +3447,7 @@ $accent: #e55733;
   }
 }
 .allservices {
-  padding: 147px 0 128px;
+  padding: 147px 0 115px;
   .rates {
     padding-top: 40px;
     background-color: #fff;

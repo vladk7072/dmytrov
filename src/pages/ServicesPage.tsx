@@ -6,7 +6,7 @@ import "swiper/css";
 import { Autoplay, Navigation } from "swiper";
 import "swiper/css/navigation";
 import { ScrollToTopOnMount } from "../helpers/routerup";
-import { dataSevicesSlide } from "../data/servicespage";
+import { dataServicesSlide } from "../data/servicespage";
 import { dataNav, dataTarifAbout } from "../data/services";
 
 export const ServicesPage = () => {
@@ -15,7 +15,7 @@ export const ServicesPage = () => {
 
   const [currentSlide, setCurrentSlide] = useState(1);
 
-  const allSlidesMetrica = dataSevicesSlide.length;
+  const allSlidesMetrica = dataServicesSlide.length;
   var allSlides;
   if (allSlidesMetrica >= 10) {
     allSlides = allSlidesMetrica;
@@ -82,7 +82,7 @@ export const ServicesPage = () => {
           <img src={bg1} alt="" />
         </div>
         <div className="servicespage__slider">
-          <div className="container servicespage__slider-container">
+          <div className="container">
             <div className="servicespage__slider-inner">
               <Swiper
                 modules={[Autoplay, Navigation]}
@@ -92,9 +92,10 @@ export const ServicesPage = () => {
                 }}
                 speed={500}
                 autoplay={{
-                  delay: 7000,
+                  delay: 15000,
                   disableOnInteraction: false,
                 }}
+                autoHeight={true}
                 slidesPerView={1}
                 onInit={(swiper: any) => {
                   swiper.params.navigation.prevEl = swiperNavPrevRef.current;
@@ -104,7 +105,7 @@ export const ServicesPage = () => {
                 }}
                 onSlideChange={(swiper) => setCurrentSlide(swiper.activeIndex)}
               >
-                {dataSevicesSlide.map((item) => (
+                {dataServicesSlide.map((item) => (
                   <SwiperSlide>
                     <div className="servicespage__slide">
                       <div className="servicespage__slide-content">
@@ -115,17 +116,6 @@ export const ServicesPage = () => {
                       </div>
                       <div className="servicespage__slide-img">
                         <img src={item.bg} alt="" />
-                        <div className="servicespage__slide-aside">
-                          <div className="servicespage__slide-aside-title">
-                            {item.address}
-                          </div>
-                          <div className="servicespage__slide-aside-title">
-                            {item.contactdataorders}
-                          </div>
-                          <div className="servicespage__slide-aside-title servicespage__slide-aside-title--down">
-                            {item.contactdatausers}
-                          </div>
-                        </div>
                       </div>
                     </div>
                   </SwiperSlide>

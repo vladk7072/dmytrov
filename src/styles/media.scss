@@ -25,10 +25,7 @@ $accent: #e55733;
             top: 285px;
             right: 66px;
           }
-          &-5 {
-            top: 340px;
-            right: 140px;
-          }
+
           &-6 {
             top: 300px;
             left: 90px;
@@ -49,14 +46,10 @@ $accent: #e55733;
     }
     &__slide {
       &-img {
-        height: 450px;
         img {
           object-fit: cover;
           height: 100%;
         }
-      }
-      &-content {
-        margin-left: 130px;
       }
     }
   }
@@ -67,6 +60,16 @@ $accent: #e55733;
     &__container {
       padding: 0;
     }
+    &__slide {
+      &-area {
+        &-box {
+          &-5 {
+            top: 340px;
+            right: 170px;
+          }
+        }
+      }
+    }
   }
   .services {
     &__inner {
@@ -76,12 +79,6 @@ $accent: #e55733;
   .servicespage {
     &__slider {
       &-nav {
-        margin-left: 15px;
-      }
-    }
-    &__slide {
-      margin-right: 15px;
-      &-content {
         margin-left: 15px;
       }
     }
@@ -196,6 +193,9 @@ $accent: #e55733;
               right: auto;
             }
           }
+          &-5 {
+            right: 120px;
+          }
         }
       }
     }
@@ -251,27 +251,27 @@ $accent: #e55733;
       padding-left: 30px;
       padding-right: 0;
     }
-    &__choise{
-      &-col{
-        &-dec{
+    &__choise {
+      &-col {
+        &-dec {
           padding: 0 30px;
         }
       }
     }
-    &__pick{
-      &-top{
-        &-items{
+    &__pick {
+      &-top {
+        &-items {
           grid-template-columns: repeat(7, 1fr);
         }
-        &-item{
-          img{
+        &-item {
+          img {
             height: 156px;
             object-fit: cover;
           }
-          &:first-child{
+          &:first-child {
             display: none;
           }
-          &-title{
+          &-title {
             font-size: 15px;
             line-height: 23px;
           }
@@ -342,16 +342,9 @@ $accent: #e55733;
     &__slide {
       flex-direction: column;
       align-items: flex-start;
-      margin: 0 15px;
       padding-bottom: 135px;
-      &-title {
-        padding-top: 44px;
-      }
       &-text {
-        margin-bottom: 0;
-      }
-      &-content {
-        margin-left: 0;
+        margin-bottom: 40px;
       }
     }
   }
@@ -379,6 +372,17 @@ $accent: #e55733;
     &__option {
       &-items {
         grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+  .indexslide {
+    &__slide {
+      &-area {
+        &-box {
+          &-5 {
+            right: 100px;
+          }
+        }
       }
     }
   }
@@ -496,18 +500,18 @@ $accent: #e55733;
       grid-template-columns: repeat(2, 1fr);
       grid-row-gap: 57px;
       &-col {
-        &:first-child{
+        &:first-child {
           margin-right: 30px;
         }
         &-dec {
           display: none;
         }
       }
-      &-item{
+      &-item {
         position: relative;
       }
-      &-mob{
-        &-delete{
+      &-mob {
+        &-delete {
           display: flex;
           position: absolute;
           right: -40px;
@@ -805,10 +809,6 @@ $accent: #e55733;
     }
     &__slide {
       grid-gap: 30px;
-      min-height: 670px;
-      &-img {
-        height: 350px;
-      }
     }
   }
   .compose {
@@ -837,7 +837,7 @@ $accent: #e55733;
         }
       }
       &-btns {
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: flex-start;
       }
     }
@@ -881,14 +881,14 @@ $accent: #e55733;
         }
       }
     }
-    &__pick{
-      &-choise{
+    &__pick {
+      &-choise {
         display: none;
       }
-      &-top{
+      &-top {
         display: none;
       }
-      &-mob{
+      &-mob {
         display: flex;
         flex-direction: column;
       }
@@ -1350,19 +1350,21 @@ $accent: #e55733;
       }
     }
     &__slide {
-      min-height: 512px;
-      &-img {
-        height: 210px;
+      min-height: 700px;
+      &-content {
+        max-width: 100%;
       }
       &-title {
         font-size: 20px;
         line-height: 130%;
         margin-bottom: 15px;
+        padding-top: 80px;
       }
       &-text {
         font-size: 13px;
         line-height: 150%;
         max-height: 180px;
+        margin: 0;
       }
       &-aside {
         padding: 20px 10px 20px;
@@ -1732,6 +1734,11 @@ $accent: #e55733;
       &__tile {
         margin: 5px;
       }
+    }
+  }
+  .servicespage {
+    &__slide {
+      min-height: 600px;
     }
   }
 }

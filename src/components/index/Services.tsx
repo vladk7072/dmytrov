@@ -76,18 +76,27 @@ export const Services = () => {
     });
   }
 
+  const [valueRage, setValueRage] = useState<any>(75);
+
+  const handleInput = (event: any) => {
+    const inputValue = event.target.value;
+
+    if (!isNaN(inputValue)) {
+      setValueRage(inputValue);
+    }
+  };
+
   return (
     <>
       <section className="services">
         <div className="container">
           <div className="services__wrapper">
             <div className="services__title-box">
-              <Link
+              <div
                 className="services__title services__title-mob"
-                to="../services/all"
               >
                 Переглянути всi послуги
-              </Link>
+              </div>
               <div className="services__title-img services__title-img-mob">
                 <svg
                   width="80"
@@ -125,19 +134,40 @@ export const Services = () => {
               </div>
               <div className="services__box">
                 <div className="services__range-title">Вибір площі: </div>
-                <div className="services__range-slider">
-                  <div className="services__range-slider-title">5</div>
-                  <Slider
-                    progress
-                    min={5}
-                    max={175}
-                    defaultValue={75}
-                    onChange={(value) => {
-                      console.log(value);
-                    }}
-                  />
-                  <div className="services__range-slider-title">175+ м2</div>
-                </div>
+                <div className="create__item-content-box">
+                      <div className="services__range-slider">
+                        <div className="services__range-slider-title">5</div>
+                        <Slider
+                          progress
+                          min={0}
+                          max={175}
+                          value={valueRage}
+                          onChange={(value) => {
+                            setValueRage(value);
+                          }}
+                        />
+                        <div className="services__range-slider-title">
+                          175+ м2
+                        </div>
+                      </div>
+                      <div className="aside-popup__form-item">
+                        <input
+                          name=""
+                          type="text"
+                          className="aside-popup__input"
+                          id="form-rage"
+                          placeholder="Email"
+                          value={valueRage}
+                          onChange={handleInput}
+                        ></input>
+                        <label
+                          className="aside-popup__label"
+                          htmlFor="form-rage"
+                        >
+                          Площа об'єкту
+                        </label>
+                      </div>
+                    </div>
                 <div className="services__range-title services__range-title-mb">
                   Вибір тарифа проєкту:
                 </div>

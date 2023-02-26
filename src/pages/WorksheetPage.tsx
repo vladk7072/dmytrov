@@ -43,41 +43,32 @@ export const WorksheetPage = () => {
   const [selectedItems, setSelectedItems] = useState<AddItemType[]>([]);
 
   const handleAdd = (addItem: AddItemType) => {
-    if (!selectedItems.some((item) => item.id === addItem.id)) {
-      setSelectedItems((prevSelectedItems) => [...prevSelectedItems, addItem]);
-    }
+    setSelectedItems((prevSelectedItems) => [...prevSelectedItems, addItem]);
   };
   const handleDelete = (itemId: number) => {
     const index = selectedItems.findIndex((item) => item.id === itemId);
-
-    if (index !== -1) {
-      const newItems = [
-        ...selectedItems.slice(0, index),
-        ...selectedItems.slice(index + 1),
-      ];
-      setSelectedItems(newItems);
-    }
+    const newItems = [
+      ...selectedItems.slice(0, index),
+      ...selectedItems.slice(index + 1),
+    ];
+    setSelectedItems(newItems);
   };
 
   const [selectedItemsTech, setSelectedItemsTech] = useState<AddItemType[]>([]);
   const handleAddTech = (addItem: AddItemType) => {
-    if (!selectedItemsTech.some((item) => item.id === addItem.id)) {
-      setSelectedItemsTech((prevSelectedItemsTech) => [
-        ...prevSelectedItemsTech,
-        addItem,
-      ]);
-    }
+    setSelectedItemsTech((prevSelectedItemsTech) => [
+      ...prevSelectedItemsTech,
+      addItem,
+    ]);
   };
   const handleDeleteTech = (itemId: number) => {
     const index = selectedItemsTech.findIndex((item) => item.id === itemId);
 
-    if (index !== -1) {
-      const newItems = [
-        ...selectedItemsTech.slice(0, index),
-        ...selectedItemsTech.slice(index + 1),
-      ];
-      setSelectedItemsTech(newItems);
-    }
+    const newItems = [
+      ...selectedItemsTech.slice(0, index),
+      ...selectedItemsTech.slice(index + 1),
+    ];
+    setSelectedItemsTech(newItems);
   };
 
   const [optionActive, setOptionActive] = useState<number | null>(null);
@@ -381,14 +372,14 @@ export const WorksheetPage = () => {
                     однакових)
                   </div>
                   <div className="worksheet__choise-items">
-                    {dataChoise.map((item) => (
+                    {dataChoise.map((item, idx) => (
                       <div
                         className={
                           selectedItems.some((el) => el.id === item.id)
                             ? "worksheet__choise-item worksheet__choise-item--active"
                             : "worksheet__choise-item"
                         }
-                        key={item.id}
+                        key={idx}
                         onClick={() => handleAdd(item)}
                       >
                         {item.svg}
@@ -419,7 +410,10 @@ export const WorksheetPage = () => {
                         {selectedItems.some((el) => el.id === item.id) && (
                           <div
                             className="worksheet__choise-mob-delete"
-                            onClick={() => handleDelete(item.id)}
+                            onClick={(event) => {
+                              event.stopPropagation();
+                              handleDelete(item.id);
+                            }}
                           >
                             <svg
                               width="16"
@@ -447,10 +441,10 @@ export const WorksheetPage = () => {
                     Перевiрте обранi кiмнати та залиште коменторi для кожної,
                     якщо потрiбно
                   </div>
-                  {selectedItems?.map((item) => (
+                  {selectedItems?.map((item, idx) => (
                     <div
                       className="worksheet__choise-item"
-                      key={item.id}
+                      key={idx}
                       onClick={() => handleDelete(item.id)}
                     >
                       {item.svg}
@@ -479,8 +473,8 @@ export const WorksheetPage = () => {
                   <div className="worksheet__choise-text">
                     Для кого/чого призначене приміщення, або ж інші побажання?
                   </div>
-                  {selectedItems.map((el) => (
-                    <div className="aside-popup__form-item" key={el.id}>
+                  {selectedItems.map((el, idx) => (
+                    <div className="aside-popup__form-item" key={idx}>
                       <textarea
                         name=""
                         className="aside-popup__input aside-popup__input-textarea worksheet__textarea"
@@ -612,14 +606,14 @@ export const WorksheetPage = () => {
                     однакових)
                   </div>
                   <div className="worksheet__choise-items">
-                    {dataTechnical.map((item) => (
+                    {dataTechnical.map((item, idx) => (
                       <div
                         className={
                           selectedItemsTech.some((el) => el.id === item.id)
                             ? "worksheet__choise-item worksheet__choise-item--active"
                             : "worksheet__choise-item"
                         }
-                        key={item.id}
+                        key={idx}
                         onClick={() => handleAddTech(item)}
                       >
                         {item.svg}
@@ -647,10 +641,15 @@ export const WorksheetPage = () => {
                             />
                           </svg>
                         </div>
-                        {selectedItemsTech.some((el) => el.id === item.id) && (
+                        {selectedItemsTech.some(
+                          (el, idx) => el.id === item.id
+                        ) && (
                           <div
                             className="worksheet__choise-mob-delete"
-                            onClick={() => handleDeleteTech(item.id)}
+                            onClick={(event) => {
+                              event.stopPropagation();
+                              handleDeleteTech(item.id);
+                            }}
                           >
                             <svg
                               width="16"
@@ -676,10 +675,10 @@ export const WorksheetPage = () => {
                     Перевiрте обранi кiмнати та залиште коменторi для кожної,
                     якщо потрiбно
                   </div>
-                  {selectedItemsTech?.map((item) => (
+                  {selectedItemsTech?.map((item, idx) => (
                     <div
                       className="worksheet__choise-item"
-                      key={item.id}
+                      key={idx}
                       onClick={() => handleDeleteTech(item.id)}
                     >
                       {item.svg}
@@ -708,8 +707,8 @@ export const WorksheetPage = () => {
                   <div className="worksheet__choise-text">
                     Поля для тексту/уточнюючi питання
                   </div>
-                  {selectedItemsTech.map((el) => (
-                    <div className="aside-popup__form-item" key={el.id}>
+                  {selectedItemsTech.map((el, idx) => (
+                    <div className="aside-popup__form-item" key={idx}>
                       <textarea
                         name=""
                         className="aside-popup__input aside-popup__input-textarea worksheet__textarea"
