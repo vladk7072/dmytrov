@@ -446,6 +446,9 @@ $accent: #e55733;
       }
       &-black {
         background: #353535;
+        &:hover{
+          border: none;
+        }
       }
       &-mob {
         display: none;
