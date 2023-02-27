@@ -1,4 +1,19 @@
 $accent: #e55733;
+@media (max-height: 1020px) {
+  .indexslide {
+    &__slide {
+      &-title {
+        margin-bottom: 25px;
+      }
+      &-text {
+        max-height: 300px;
+      }
+      &-box {
+        padding: 50px 46px 140px 46px;
+      }
+    }
+  }
+}
 @media (max-height: 1900px) {
   .up {
     right: 15px;
@@ -94,6 +109,7 @@ $accent: #e55733;
 @media (max-width: 1160px) {
   .header {
     &__face {
+      flex-direction: row-reverse;
       &-item {
         &-mob {
           display: flex;
@@ -176,6 +192,29 @@ $accent: #e55733;
       grid-row-gap: 16px;
       &-tel {
         grid-column: span 4;
+      }
+    }
+    &:hover {
+      .header {
+        &__wrapper {
+          min-height: 70px;
+        }
+        &__face {
+          &-bar {
+            display: flex;
+          }
+        }
+      }
+    }
+    &__wrapper {
+      &--active {
+        .header {
+          &__face {
+            &-bar {
+              display: flex;
+            }
+          }
+        }
       }
     }
   }
@@ -890,7 +929,7 @@ $accent: #e55733;
       }
       &-col {
         &-rdec {
-          &:first-child{
+          &:first-child {
             margin-right: 0;
           }
           &::after {
@@ -953,6 +992,13 @@ $accent: #e55733;
   }
 }
 @media (max-width: 660px) {
+  .header{
+    &__face{
+      &-btn{
+        display: none;
+      }
+    }
+  }
   .worksheet {
     &__inputs {
       &-grid3 {

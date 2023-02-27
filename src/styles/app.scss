@@ -95,7 +95,6 @@ $accent: #e55733;
   font-family: "Raleway", sans-serif;
   font-weight: 800;
 }
-
 .container {
   max-width: 1326px;
   margin: 0 auto;
@@ -289,12 +288,47 @@ $accent: #e55733;
   left: 0;
   right: 0;
   z-index: 100;
+  &:hover {
+    .header {
+      &__wrapper {
+        min-height: 120px;
+      }
+      &__nav {
+        &-doc {
+          display: flex;
+        }
+      }
+      &__face {
+        &-bar {
+          display: flex;
+        }
+      }
+    }
+  }
   &__wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
     min-height: 120px;
     padding: 10px 0;
+    &--active {
+      min-height: 51px;
+      .header {
+        &__nav {
+          &-list{
+            margin-bottom: 0;
+          }
+          &-doc {
+            display: none;
+          }
+        }
+        &__face {
+          &-bar {
+            display: none;
+          }
+        }
+      }
+    }
   }
   &__nav {
     display: flex;
@@ -308,6 +342,7 @@ $accent: #e55733;
     &-list {
       display: flex;
       align-items: center;
+      margin-bottom: 12px;
     }
     &-item {
       & + & {
@@ -446,7 +481,7 @@ $accent: #e55733;
       }
       &-black {
         background: #353535;
-        &:hover{
+        &:hover {
           border: none;
         }
       }
@@ -1383,11 +1418,11 @@ $accent: #e55733;
         }
       }
     }
-    &-box{
+    &-box {
       display: flex;
       align-items: center;
     }
-    &-img{
+    &-img {
       height: 50px;
       width: 50px;
       margin-top: 6px;
@@ -1446,7 +1481,7 @@ $accent: #e55733;
       font-size: 25px;
       margin-left: 1px;
     }
-    &-lh95{
+    &-lh95 {
       line-height: 95%;
     }
   }
@@ -2736,7 +2771,7 @@ $accent: #e55733;
       &-mb10 {
         margin-bottom: 10px;
       }
-      &-mob{
+      &-mob {
         display: none;
       }
     }

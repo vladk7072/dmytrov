@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import logo from "../assets/images/header-img/logo.svg";
+import logoMob from "../assets/images/header-img/logo-mob.svg";
 import calc from "../assets/images/header-img/calc.svg";
 import user from "../assets/images/header-img/user.svg";
 import { Link, NavLink } from "react-router-dom";
@@ -53,13 +54,34 @@ export const Header = () => {
     }
   };
 
+  const [mobMenu, setMobMenu] = useState(false);
+
+  window.onscroll = function () {
+    if (window.pageYOffset >= 100) {
+      setMobMenu(true);
+    }
+    if (window.pageYOffset < 100) {
+      setMobMenu(false);
+    }
+  };
+
   return (
     <>
       <header className="header">
         <div className="container">
-          <div className="header__wrapper">
+          <div
+            className={
+              mobMenu
+                ? "header__wrapper header__wrapper--active"
+                : "header__wrapper"
+            }
+          >
             <Link className="header__logo" to="home">
-              <img className="header__logo-img" src={logo} alt="" />
+              <img
+                className="header__logo-img"
+                src={mobMenu ? logoMob : logo}
+                alt=""
+              />
             </Link>
             <nav
               className={
