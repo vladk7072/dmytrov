@@ -1003,6 +1003,19 @@ $accent: #e55733;
         display: none;
       }
     }
+    &__logo{
+      &-img{
+        display: none;
+        &-mob{
+          display: inline-block;
+        }
+      }
+    }
+    &__wrapper{
+      &--active{
+        min-height: 120px;
+      }
+    }
   }
   .worksheet {
     &__inputs {

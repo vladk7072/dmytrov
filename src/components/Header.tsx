@@ -82,6 +82,11 @@ export const Header = () => {
                 src={mobMenu ? logoMob : logo}
                 alt=""
               />
+              <img
+                className="header__logo-img header__logo-img-mob"
+                src={logo}
+                alt=""
+              />
             </Link>
             <nav
               className={

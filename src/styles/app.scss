@@ -305,6 +305,13 @@ $accent: #e55733;
       }
     }
   }
+  &__logo{
+    &-img{
+      &-mob{
+        display: none;
+      }
+    }
+  }
   &__wrapper {
     display: flex;
     align-items: center;
