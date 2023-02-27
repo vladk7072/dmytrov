@@ -305,9 +305,9 @@ $accent: #e55733;
       }
     }
   }
-  &__logo{
-    &-img{
-      &-mob{
+  &__logo {
+    &-img {
+      &-mob {
         display: none;
       }
     }
@@ -322,7 +322,7 @@ $accent: #e55733;
       min-height: 51px;
       .header {
         &__nav {
-          &-list{
+          &-list {
             margin-bottom: 0;
           }
           &-doc {
@@ -631,6 +631,7 @@ $accent: #e55733;
       display: none;
     }
   }
+
   &__slide {
     &-area {
       min-height: 572px;
@@ -643,6 +644,7 @@ $accent: #e55733;
     }
     &-box {
       min-height: 572px;
+      padding: 50px 46px 140px 46px;
     }
   }
   &__slide {
@@ -654,17 +656,17 @@ $accent: #e55733;
     }
     &-title {
       @extend %ral-600;
-      font-size: 52px;
       line-height: 100%;
       color: #fff;
-      margin-bottom: 66px;
+      margin-bottom: 25px;
+      font-size: 45px;
     }
     &-text {
       @extend %ral-700;
-      font-size: 20px;
       line-height: 150%;
       color: #fff;
-      max-height: 350px;
+      font-size: 18px;
+      max-height: 300px;
       overflow-y: auto;
       padding-right: 12px;
       &::-webkit-scrollbar {
@@ -684,7 +686,7 @@ $accent: #e55733;
     }
     &-subtitle {
       @extend %ral-600;
-      font-size: 30px;
+      font-size: 26px;
       line-height: 19px;
       color: #fff;
       margin-bottom: 30px;
