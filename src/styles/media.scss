@@ -4,8 +4,13 @@ $accent: #e55733;
     &__slide {
       &-title {
         margin-bottom: 25px;
+        font-size: 45px;
+      }
+      &-subtitle {
+        font-size: 26px;
       }
       &-text {
+        font-size: 18px;
         max-height: 300px;
       }
       &-box {
@@ -992,9 +997,9 @@ $accent: #e55733;
   }
 }
 @media (max-width: 660px) {
-  .header{
-    &__face{
-      &-btn{
+  .header {
+    &__face {
+      &-btn {
         display: none;
       }
     }
