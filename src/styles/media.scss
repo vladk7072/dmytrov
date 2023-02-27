@@ -62,6 +62,9 @@ $accent: #e55733;
     }
     &__slide {
       &-area {
+        &-img{
+          margin: 0;
+        }
         &-box {
           &-5 {
             top: 340px;

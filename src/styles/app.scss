@@ -636,6 +636,7 @@ $accent: #e55733;
     &-area {
       &-img {
         object-fit: cover;
+        margin-top: -50px;
       }
     }
     &-box {
@@ -725,7 +726,7 @@ $accent: #e55733;
           }
         }
         &-1 {
-          top: 140px;
+          top: 90px;
           left: 121px;
           z-index: 4;
           img {
@@ -741,7 +742,7 @@ $accent: #e55733;
           }
         }
         &-2 {
-          bottom: 350px;
+          bottom: 300px;
           left: 150px;
           z-index: 4;
           img {
@@ -757,7 +758,7 @@ $accent: #e55733;
           }
         }
         &-3 {
-          bottom: 250px;
+          bottom: 200px;
           right: 100px;
           z-index: 4;
           img {
@@ -773,7 +774,7 @@ $accent: #e55733;
           }
         }
         &-4 {
-          top: 285px;
+          top: 235px;
           right: 66px;
           z-index: 4;
           img {
@@ -789,7 +790,7 @@ $accent: #e55733;
           }
         }
         &-5 {
-          top: 340px;
+          top: 290px;
           right: 220px;
           z-index: 4;
           img {
@@ -805,7 +806,7 @@ $accent: #e55733;
           }
         }
         &-6 {
-          top: 300px;
+          top: 250px;
           left: 190px;
           z-index: 4;
           img {
