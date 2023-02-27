@@ -634,24 +634,21 @@ $accent: #e55733;
 
   &__slide {
     &-area {
-      min-height: 572px;
-      border: 3px solid $accent;
-      border-right: none;
       &-img {
-        height: 100%;
         object-fit: cover;
       }
     }
     &-box {
-      min-height: 572px;
       padding: 50px 46px 140px 46px;
     }
   }
   &__slide {
     display: grid;
     grid-template-columns: minmax(auto, 770px) minmax(auto, 526px);
+    max-height: 596px;
+    border: 3px solid $accent;
+    overflow: hidden;
     &-box {
-      padding: 70px 46px 153px 73px;
       background: $accent;
     }
     &-title {
@@ -666,7 +663,7 @@ $accent: #e55733;
       line-height: 150%;
       color: #fff;
       font-size: 18px;
-      max-height: 300px;
+      max-height: 240px;
       overflow-y: auto;
       padding-right: 12px;
       &::-webkit-scrollbar {
@@ -749,7 +746,7 @@ $accent: #e55733;
           z-index: 4;
           img {
             position: absolute;
-            top: 20px;
+            top: -150px;
             left: 20px;
             width: 455px;
             max-width: 455px;
@@ -760,7 +757,7 @@ $accent: #e55733;
           }
         }
         &-3 {
-          bottom: 90px;
+          bottom: 250px;
           right: 100px;
           z-index: 4;
           img {
@@ -797,7 +794,7 @@ $accent: #e55733;
           z-index: 4;
           img {
             position: absolute;
-            top: 20px;
+            top: -150px;
             left: 20px;
             max-width: 455px;
             width: 455px;
@@ -813,7 +810,7 @@ $accent: #e55733;
           z-index: 4;
           img {
             position: absolute;
-            top: 20px;
+            top: -140px;
             left: 20px;
             max-width: 455px;
             width: 455px;
@@ -857,7 +854,7 @@ $accent: #e55733;
   }
   &__bar {
     position: absolute;
-    bottom: 94px;
+    bottom: 35px;
     right: 42px;
     z-index: 5;
     display: flex;

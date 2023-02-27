@@ -208,6 +208,7 @@ $accent: #e55733;
       &-area {
         &-box {
           &-3 {
+            bottom: 80px;
             img {
               right: auto;
             }
@@ -218,7 +219,8 @@ $accent: #e55733;
             }
           }
           &-5 {
-            right: 120px;
+            top: 260px;
+            right: 140px;
           }
         }
       }
@@ -405,8 +407,18 @@ $accent: #e55733;
     }
   }
   .indexslide {
+    &__wrapper{
+      border: 3px solid $accent;
+    }
     &__slide {
+      max-height: 100%;
+      min-height: 640px;
+      overflow: visible;
+      border: none;
       &-area {
+        &-img{
+          height: 100%;
+        }
         &-box {
           &-5 {
             right: 100px;
@@ -627,6 +639,7 @@ $accent: #e55733;
   }
   .indexslide {
     &__wrapper {
+      border: none;
       .swiper {
         background-color: $accent;
       }
